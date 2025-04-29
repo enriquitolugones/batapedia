@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batapedia</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; }
+    nav { background: #222; color: white; width: 220px; padding: 1rem; box-sizing: border-box; text-align: center; }
+    nav img { max-width: 100%; border-radius: 8px; margin-bottom: 1rem; }
+    nav ul { list-style: none; padding: 0; }
+    nav li { margin-bottom: 1rem; cursor: pointer; }
+    nav li:hover { text-decoration: underline; }
+    main { flex: 1; padding: 2rem; overflow-y: auto; }
+    h1 { margin-top: 0; }
+    img, video, audio { max-width: 100%; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Bat%C3%A1_drums.jpg" alt="Tambores Batá">
+    <ul>
+      <li onclick="cargar('historia')">Historia</li>
+      <li onclick="cargar('cantos')">Cantos</li>
+      <li onclick="cargar('toques')">Toques</li>
+      <li onclick="cargar('transcripciones')">Transcripciones</li>
+      <li onclick="cargar('partituras')">Partituras</li>
+    </ul>
+  </nav>
+  <main id="contenido">
+    <h1>DESDE AFRICA CON DOLOR</h1>
+    <p>Negros y negras, todo mezclado, desde las laderas del río Níger, robados por otros negros y cargados en gigantes de madera, llegaron los abuelos de los abuelos, con ellos su sangre, sus dioses y su música.</p>
+  </main>
+  
+  <script>
+    const contenidos = {
+      historia: {
+        titulo: "Historia",
+        texto: "Aquí irá la historia de los tambores Batá.",
+        imagen: "",
+        video: "",
+        audio: ""
+      },
+      cantos: {
+        titulo: "Cantos",
+        texto: "Aquí irán cantos tradicionales.",
+        imagen: "",
+        video: "",
+        audio: ""
+      },
+      toques: {
+        titulo: "Toques",
+        texto: "Aquí se explicarán los diferentes toques.",
+        imagen: "",
+        video: "",
+        audio: ""
+      },
+      transcripciones: {
+        titulo: "Transcripciones",
+        texto: "Aquí se mostrarán transcripciones de toques y cantos.",
+        imagen: "",
+        video: "",
+        audio: ""
+      },
+      partituras: {
+        titulo: "Partituras",
+        texto: "Aquí se incluirán partituras de piezas tradicionales.",
+        imagen: "",
+        video: "",
+        audio: ""
+      }
+    };
+
+    function cargar(categoria) {
+      const c = contenidos[categoria];
+      document.getElementById('contenido').innerHTML = `
+        <h1>${c.titulo}</h1>
+        <p>${c.texto}</p>
+        ${c.imagen ? `<img src="${c.imagen}" alt="Imagen relacionada">` : ""}
+        ${c.video ? `<div><h3>Video</h3><iframe width="560" height="315" src="${c.video}" frameborder="0" allowfullscreen></iframe></div>` : ""}
+        ${c.audio ? `<div><h3>Audio</h3><audio controls src="${c.audio}"></audio></div>` : ""}
+      `;
+    }
+  </script>
+</body>
+</html>
