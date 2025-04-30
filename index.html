@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,23 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Batapedia Clásica</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       background-color: black;
       color: white;
       font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
+      height: 410px;
     }
     header {
       background: url('banner_difuminado_suave.jpg') center/cover no-repeat;
-      height: 250px;
+      height: 150px;
       width: 100%;
     }
     .contenido {
       display: flex;
-      flex: 1;
+      height: calc(100% - 150px);
+      align-items: stretch;
     }
     nav {
       width: 200px;
@@ -30,6 +31,7 @@
     }
     .boton {
       display: block;
+      width: 100%;
       margin-bottom: 1rem;
       padding: 1rem;
       text-align: center;
@@ -37,32 +39,52 @@
       font-weight: bold;
       border: 2px solid white;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       word-wrap: break-word;
+      box-sizing: border-box;
     }
     .rojo { background-color: red; }
     .verde { background-color: limegreen; }
     main {
       flex: 1;
-      padding: 2rem;
-      overflow-y: auto;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      display: flex;
+      flex-direction: column;
     }
     .cuadro-central {
       border: 1px solid white;
       padding: 1rem;
-      margin-bottom: 2rem;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 410px;
+      position: relative;
     }
-    .cuadro-imagen {
-      border: 1px dashed white;
-      width: 200px;
-      height: 300px;
-      margin-left: auto;
+    .cuadro-central h2, .cuadro-central p {
+      margin: 0.5rem 0;
     }
-    footer {
-      text-align: left;
-      padding: 1rem;
-      font-size: 0.8rem;
-      white-space: pre-wrap;
+    .frase-central {
+      font-weight: bold;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .difuntos {
+      font-size: 0.75rem;
+      text-align: center;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+    }
+    .ibae-final {
+      font-weight: bold;
+      text-align: center;
+    }
+    .imagen-lateral {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 180px;
+      border: 1px solid white;
     }
   </style>
 </head>
@@ -73,28 +95,32 @@
       <a href="#" class="boton rojo">INICIO</a>
       <a href="#" class="boton verde">ORICHAS</a>
       <a href="#" class="boton rojo">CANCIONES</a>
-      <a href="#" class="boton verde">TOQUES<br>DE BATÁ</a>
+      <a href="#" class="boton verde">TOQUES DE BATÁ</a>
       <a href="#" class="boton rojo">TRANSCRIPCIONES</a>
       <a href="#" class="boton verde">DISCOGRAFÍA</a>
     </nav>
     <main>
       <div class="cuadro-central">
-        <h2>Desde África con Dolor</h2>
-        <p>No sólo trajeron los buques negreros . carne esclava . semillas, virus y sangre...</p>
-        <p>África nos regaló el saber de la tierra</p>
-        <p>Lo binario dentro del ternario</p>
-        <p>y a nuestros abuelos</p>
-      </div>
-      <div class="cuadro-imagen">
-        <!-- Aquí colocaremos la imagen impactante -->
+        <img src="mujeres_africanas.jpg" alt="Mujeres africanas" class="imagen-lateral">
+        <div>
+          <h2>Desde África con Dolor</h2>
+          <p>No sólo trajeron los buques negreros . carne esclava . semillas, virus y sangre...</p>
+          <p>África nos regaló el saber de la tierra</p>
+          <p>Lo binario dentro del ternario</p>
+          <p>y a nuestros abuelos</p>
+        </div>
+        <div>
+          <div class="frase-central">BOBBO ARA ONÚ</div>
+          <div class="difuntos">
+            VIVINA AYDE PINO RAMÍREZ, JULIO QUIRINO LUGONES PINO, HERMINIO MÁXIMO LUGONES PINO,<br>
+            JESÚS ROGELIO ALONSO NARANJO, EVANGELINA BORES PEÑA, ESPERANZA ALONSO NARANJO,<br>
+            FERMÍN ALONSO NARANJO, EDER FALCÓN FINALÉ, ALEXIS ALCÁNTARA BERNARDO, MAGALIS CRUZ,<br>
+            ÁNGEL ARMANDO BADÍA, JOSÉ MARÍA RUEDA, LEONEL, SANTOS FALCÓN PÉREZ.
+          </div>
+          <div class="ibae-final">IBAE BAYEN TONU</div>
+        </div>
       </div>
     </main>
   </div>
-  <footer>
-    IBAE BAYEN TONU — VIVINA AYDE PINO RAMÍREZ, JULIO QUIRINO LUGONES PINO, HERMINIO MÁXIMO LUGONES PINO, 
-    JESÚS ROGELIO ALONSO NARANJO, EVANGELINA BORES PEÑA, ESPERANZA ALONSO NARANJO, 
-    FERMÍN ALONSO NARANJO, EDER FALCÓN FINALÉ, ALEXIS ALCÁNTARA BERNARDO, MAGALIS CRUZ, 
-    ÁNGEL ARMANDO BADÍA, JOSÉ MARÍA RUEDA, LEONEL.
-  </footer>
 </body>
 </html>
