@@ -88,9 +88,43 @@
     }
   </style>
 </head>
+  
+
+  <header></header>
+  <div class="contenido">
+    <nav style="margin-top: 2.5rem;">
+      <a href="#" class="boton rojo">INICIO</a>
+      <a href="#" class="boton verde" id="btn-orichas" onclick="mostrarSeccion('orichas')">ORICHAS</a>
+      <a href="#" class="boton rojo">CANCIONES</a>
+      <a href="#" class="boton verde">TOQUES DE BATÁ</a>
+      <a href="#" class="boton rojo">TRANSCRIPCIONES</a>
+      <a href="#" class="boton verde">DISCOGRAFÍA</a>
+    </nav>
+    <main>
+      <div class="cuadro-central" id="contenido" >
+        <img src="mujeres_africanas.webp" alt="Mujeres africanas" class="imagen-lateral">
+        <div>
+          <h2>Desde África con Dolor</h2>
+          <p>No sólo trajeron los buques negreros . carne esclava . semillas, virus y sangre...</p>
+          <p>África nos regaló el saber de la tierra</p>
+          <p>Lo binario dentro del ternario</p>
+          <p style="margin-bottom: 28px;">y a nuestros abuelos</p>
+        </div>
+        <div>
+          <div class="frase-central">BOBBO ARA ONÚ</div>
+          <div class="difuntos">
+            JULIO ENRIQUE LUGONES PÉREZ, VIVINA AYDE PINO RAMÍREZ, JULIO QUIRINO LUGONES PINO, HERMINIO MÁXIMO LUGONES PINO,<br>
+            JESÚS ROGELIO ALONSO NARANJO, EVANGELINA BORES PEÑA, ESPERANZA ALONSO NARANJO, FERMÍN ALONSO NARANJO,<br>
+            SANTOS FALCÓN PÉREZ, EDER FALCÓN FINALÉ, LEONEL IGLESIA BORGES, MAGALIS CRUZ,<br>
+            ÁNGEL ARMANDO BADÍA, JOSÉ MARÍA RUEDA, ALEXIS ALCÁNTARA BERNARDO.
+          </div>
+          <div class="ibae-final">IBAE BAYEN TONU</div>
+        </div>
+      </div>
+    </main>
+  </div>
   <script>
 const contenido = document.getElementById("contenido");
-
 const secciones = {
   orichas: `
     <style>
@@ -176,39 +210,5 @@ function mostrarSeccion(nombre) {
   contenido.innerHTML = secciones[nombre] || "<p>Contenido no disponible</p>";
 }
 </script>
-
-  <header></header>
-  <div class="contenido">
-    <nav style="margin-top: 2.5rem;">
-      <a href="#" class="boton rojo">INICIO</a>
-      <a href="#" class="boton verde" id="btn-orichas" onclick="mostrarSeccion('orichas')">ORICHAS</a>
-      <a href="#" class="boton rojo">CANCIONES</a>
-      <a href="#" class="boton verde">TOQUES DE BATÁ</a>
-      <a href="#" class="boton rojo">TRANSCRIPCIONES</a>
-      <a href="#" class="boton verde">DISCOGRAFÍA</a>
-    </nav>
-    <main>
-      <div class="cuadro-central" id="contenido" >
-        <img src="mujeres_africanas.webp" alt="Mujeres africanas" class="imagen-lateral">
-        <div>
-          <h2>Desde África con Dolor</h2>
-          <p>No sólo trajeron los buques negreros . carne esclava . semillas, virus y sangre...</p>
-          <p>África nos regaló el saber de la tierra</p>
-          <p>Lo binario dentro del ternario</p>
-          <p style="margin-bottom: 28px;">y a nuestros abuelos</p>
-        </div>
-        <div>
-          <div class="frase-central">BOBBO ARA ONÚ</div>
-          <div class="difuntos">
-            JULIO ENRIQUE LUGONES PÉREZ, VIVINA AYDE PINO RAMÍREZ, JULIO QUIRINO LUGONES PINO, HERMINIO MÁXIMO LUGONES PINO,<br>
-            JESÚS ROGELIO ALONSO NARANJO, EVANGELINA BORES PEÑA, ESPERANZA ALONSO NARANJO, FERMÍN ALONSO NARANJO,<br>
-            SANTOS FALCÓN PÉREZ, EDER FALCÓN FINALÉ, LEONEL IGLESIA BORGES, MAGALIS CRUZ,<br>
-            ÁNGEL ARMANDO BADÍA, JOSÉ MARÍA RUEDA, ALEXIS ALCÁNTARA BERNARDO.
-          </div>
-          <div class="ibae-final">IBAE BAYEN TONU</div>
-        </div>
-      </div>
-    </main>
-  </div>
 </body>
 </html>
