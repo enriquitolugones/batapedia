@@ -87,9 +87,7 @@
       border: 1px solid white;
     }
   </style>
-</head>
-  
-
+</head
   <header></header>
   <div class="contenido">
     <nav style="margin-top: 2.5rem;">
@@ -130,10 +128,9 @@ const secciones = {
     <style>
       .orichas-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(5-1fr); /* 5 columnas fjas */
+        gap: 0,5rem;
         padding: 1rem;
-        justify-items: center;
       }
       .oricha-btn {
         background-color: black;
@@ -141,17 +138,17 @@ const secciones = {
         color: white;
         padding: 0.5rem;
         text-align: center;
-        width: 120px;
-        cursor: pointer;
-        transition: transform 0.2s, background-color 0.2s;
+        width: 100%;
+        heigth:140px;
+        box-sizing: border-box;
       }
       .oricha-btn:hover {
         background-color: #222;
         transform: scale(1.03);
       }
       .oricha-btn img {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 0.5rem;
