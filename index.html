@@ -88,7 +88,95 @@
     }
   </style>
 </head>
-<body>
+  <script>
+const contenido = document.getElementById("contenido");
+
+const secciones = {
+  orichas: `
+    <style>
+      .orichas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        justify-items: center;
+      }
+      .oricha-btn {
+        background-color: black;
+        border: 2px solid white;
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+        width: 120px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+      }
+      .oricha-btn:hover {
+        background-color: #222;
+        transform: scale(1.03);
+      }
+      .oricha-btn img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+      }
+      .oricha-btn span {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: bold;
+      }
+    </style>
+    <div class="orichas-grid">
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="AGGAYÚ"><span>AGGAYÚ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="BABALU AYÉ"><span>BABALU AYÉ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="CHANGÓ"><span>CHANGÓ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="DADA"><span>DADA</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="EGGUN"><span>EGGUN</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ELEGGUÁ"><span>ELEGGUÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="IBEYIS"><span>IBEYIS</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="IKÚ"><span>IKÚ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="INLÉ"><span>INLÉ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="LOGUN EDÉ"><span>LOGUN EDÉ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="NANÁ BURUKÚ"><span>NANÁ BURUKÚ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OBÁ"><span>OBÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OBATALÁ"><span>OBATALÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ODUDUWÁ"><span>ODUDUWÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OGGÚN"><span>OGGÚN</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OKÉ"><span>OKÉ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OLÓKUN"><span>OLÓKUN</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ORICHA OKÓ"><span>ORICHA OKÓ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ORULA"><span>ORULA</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OSHOSI"><span>OSHOSI</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OSHÚN"><span>OSHÚN</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OSHAIN"><span>OSHAIN</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OYÁ"><span>OYÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="YEMAYÁ"><span>YEMAYÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ARARÁ"><span>ARARÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="AJE SHALUGÁ"><span>AJE SHALUGÁ</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="ESHU"><span>ESHU</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="IFA"><span>IFA</span></div>
+      <div class="oricha-btn"><img src="oricha_placeholder.jpg" alt="OLOFI"><span>OLOFI</span></div>
+    </div>
+  `,
+  inicio: contenido.innerHTML
+};
+
+function mostrarSeccion(nombre) {
+  document.querySelectorAll(".boton").forEach(btn => {
+    btn.style.backgroundColor = btn.classList.contains("rojo") ? "red" : "limegreen";
+    btn.style.color = "white";
+  });
+  const btn = document.getElementById("btn-" + nombre);
+  if (btn) {
+    btn.style.backgroundColor = "white";
+    btn.style.color = "black";
+  }
+  contenido.innerHTML = secciones[nombre] || "<p>Contenido no disponible</p>";
+}
+</script>
+</body><body>
   <header></header>
   <div class="contenido">
     <nav style="margin-top: 2.5rem;">
