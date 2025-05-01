@@ -131,10 +131,19 @@
   }
 </style>
 <div class="orichas-grid">
-<div class="oricha-btn">
+<div class="oricha-btn"> onclick="abrirVentana()"> <!-- Este es el botón que abrirá la ventana emergente -->
 <img alt="CHANGO" src="CHANGO.png">
 <span>CHANGÓ</span>
 </div>
+<div id="changoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="cerrarVentana()">&times;</span> <!-- Cierra la ventana -->
+        <h2>CHANGÓ</h2>
+        <img src="CHANGO.png" alt="CHANGO" style="width:100px;height:100px;">
+        <p>CHANGÓ es el Dios del trueno, de la danza y de los Tambores Batá. Sincretiza con Santa Bárbara.</p>
+        <p>Colores: Rojo y Blanco</p>
+        <p>Número: 4</p>
+    </div>
 <div class="oricha-btn">
 <img alt="I2" src="file:///Users/enriquelugones/Desktop/I2.jpg">
 <span>O2</span>
