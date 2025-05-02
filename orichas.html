@@ -132,9 +132,9 @@
         }
       </style>
       <div class="orichas-grid">
-        <div class="oricha-btn">
-          <img alt="CHANGO" src="CHANGO.png">
-          <span>CHANGÓ</span>
+        <div class="oricha-btn" onclick="openPopup()">                      <<!-- Boton CHANGO -->>
+          <img alt="CHANGO" src="CHANGO.png">                               <<!-- Imagen chango -->>
+          <span>CHANGÓ</span>                                               <<!-- Nombre       -->>
         </div>
         <div class="oricha-btn">
           <img alt="I2" src="file:///Users/enriquelugones/Desktop/I2.jpg">
@@ -216,5 +216,28 @@
     </div>
   </main>
 </div>
+          <<! -- ABRIR VENTANA EMERGENTE CARACTERISTICAS DE CHANGO -->>
+            <div id="chango-popup" class="popup">
+    <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>CHANGÓ</h2>
+    <img src="CHANGO.png" alt="CHANGO">
+    <p>Chango es el dios del trueno, la danza, y los tambores Batá. Sincretiza con Santa Bárbara.</p>
+    <p>Colores: Rojo y Blanco</p>
+    <p>Número: 4</p>
+  </div>
+</div>
+            <!-- Aquí va el código de JavaScript -->
+<script>
+  // Función para abrir la ventana emergente
+  function abrirVentana() {
+    document.getElementById("chango-popup").style.display = "block";
+  }
+
+  // Función para cerrar la ventana emergente
+  function closePopup() {
+    document.getElementById("chango-popup").style.display = "none";
+  }
+</script>
 </body>
 </html>
