@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Batapedia Clásica</title>
+  <title>toques_de_bata/title>
   <style>
     html, body {
       margin: 0;
@@ -93,131 +93,97 @@
 <div class="contenido">
   <nav style="margin-top: 2.5rem;">
     <a href="index.html" class="boton rojo">INICIO</a>
-    <a class="boton verde" href="file:///Users/enriquelugones/Desktop/oricha.html#">ORICHAS</a>
+    <a href="orichas.html" class="boton verde">ORICHAS</a>
     <a class="boton rojo" href="file:///Users/enriquelugones/Desktop/oricha.html#">CANCIONES</a>
-    <a class="boton verde" href="file:///Users/enriquelugones/Desktop/oricha.html#">TOQUES DE BATÁ</a>
+    <a href="toques_de_bata.html" class="boton verde">TOQUES DE BATÁ</a>
     <a class="boton rojo" href="file:///Users/enriquelugones/Desktop/oricha.html#">TRANSCRIPCIONES</a>
     <a class="boton verde" href="file:///Users/enriquelugones/Desktop/oricha.html#">DISCOGRAFÍA</a>
   </nav>
   <main>
     <div class="cuadro-central">
       <style>
-        .orichas-grid {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 0.6rem;
-          padding: 1rem;
-          justify-items: center;
+body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
         }
-        .oricha-btn {
-          background-color: black;
-          border: 2px solid white;
-          color: white;
-          padding: 0.3rem;
-          text-align: center;
-          width: 90px;
-          height: 80px;
-          cursor: pointer;
+
+        .contenido {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 20px;
         }
-        .oricha-btn img {
-          width: 40px;
-          height: 40px;
-          object-fit: cover;
-          margin-bottom: 0.3rem;
+
+        .list-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            justify-items: center;
+            width: 100%;
         }
-        .oricha-btn span {
-          font-size: 0.65rem;
-          font-weight: bold;
-          display: block;
+
+        .list-container a {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 5px;
+            width: 150px;
         }
+
+        .list-container a:hover {
+            background-color: limegreen;
+            cursor: pointer;
+        }
+
+        /* Estilo para el contenedor que contiene las tres listas */
+        .three-lists {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* Cada una de las tres listas */
+        .list-left, .list-center, .list-right {
+            width: 30%;
+        }
+        
       </style>
-      <div class="orichas-grid">
+      
+      <h1>Toques de Batá</h1>
+
+    <div class="contenido">
+        <div class="three-lists">
+            <!-- Lista Izquierda -->
+            <div class="list-left list-container">
+                <a href="pagina1.html">Toque 1</a>
+                <a href="pagina2.html">Toque 2</a>
+                <a href="pagina3.html">Toque 3</a>
+            </div>
+
+            <!-- Lista Central -->
+            <div class="list-center list-container">
+                <a href="pagina4.html">Toque 4</a>
+                <a href="pagina5.html">Toque 5</a>
+                <a href="pagina6.html">Toque 6</a>
+            </div>
+
+            <!-- Lista Derecha -->
+            <div class="list-right list-container">
+                <a href="pagina7.html">Toque 7</a>
+                <a href="pagina8.html">Toque 8</a>
+                <a href="pagina9.html">Toque 9</a>
+            </div>
+        </div>
+    </div>
         
-        <div class="oricha-btn"                                                 <!-- Boton CHANGO -->
-          <a href="POPUP/CHANGO_POPUP.html">                                    <!-- Ruta a Popup -->
-            <img alt="CHANGO" src="FOTOS/CHANGO.png">                           <!-- Imagen chango -->
-            <span>CHANGÓ</span>                                                 <!-- Nombre        -->
-          </a>
-        </div>
         
-        <div class="oricha-btn">                                               <!-- BOTON OBATALA -->
-           <a href="POPUP/OBATALA_POPUP.html">                                 <!-- Ruta a Popup -->
-              <img alt="OBATALA" src="FOTOS/OBATALA.jpeg">                     <!-- Imagen obatala -->
-              <span>OBATALÁ</span>                                             <!-- Nombre         -->
-           </a>
-        </div>
-        
-        <div class="oricha-btn">
-          <img alt="I3" src="file:///Users/enriquelugones/Desktop/I3.jpg">
-          <span>O3</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I4" src="file:///Users/enriquelugones/Desktop/I4.jpg">
-          <span>O4</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I5" src="file:///Users/enriquelugones/Desktop/I5.jpg">
-          <span>O5</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I6" src="file:///Users/enriquelugones/Desktop/I6.jpg">
-          <span>O6</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I7" src="file:///Users/enriquelugones/Desktop/I7.jpg">
-          <span>O7</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I8" src="file:///Users/enriquelugones/Desktop/I8.jpg">
-          <span>O8</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I9" src="file:///Users/enriquelugones/Desktop/I9.jpg">
-          <span>O9</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I10" src="file:///Users/enriquelugones/Desktop/I10.jpg">
-          <span>O10</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I11" src="file:///Users/enriquelugones/Desktop/I11.jpg">
-          <span>O11</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I12" src="file:///Users/enriquelugones/Desktop/I12.jpg">
-          <span>O12</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I13" src="file:///Users/enriquelugones/Desktop/I13.jpg">
-          <span>O13</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I14" src="file:///Users/enriquelugones/Desktop/I14.jpg">
-          <span>O14</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I15" src="file:///Users/enriquelugones/Desktop/I15.jpg">
-          <span>O15</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I16" src="file:///Users/enriquelugones/Desktop/I16.jpg">
-          <span>O16</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I17" src="file:///Users/enriquelugones/Desktop/I17.jpg">
-          <span>O17</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I18" src="file:///Users/enriquelugones/Desktop/I18.jpg">
-          <span>O18</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I19" src="file:///Users/enriquelugones/Desktop/I19.jpg">
-          <span>O19</span>
-        </div>
-        <div class="oricha-btn">
-          <img alt="I20" src="file:///Users/enriquelugones/Desktop/I20.jpg">
-          <span>O20</span>
         </div>
       </div>
     </div>
