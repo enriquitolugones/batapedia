@@ -78,7 +78,8 @@
     <a class="boton rojo" href="file:///Users/enriquelugones/Desktop/oricha.html#">TRANSCRIPCIONES</a>
     <a class="boton verde" href="file:///Users/enriquelugones/Desktop/oricha.html#">DISCOGRAFÍA</a>
   </nav>
- <main>
+
+  <main>
   <div class="cuadro-central"> <!-- MARCO CENTRAL -->
 
     <!-- Parte superior: Título y Oricha -->
@@ -90,13 +91,23 @@
       </div>
     </div>
 
-    <!-- Marco negro: SOLO la partitura -->
-    <div style="flex: 1; background-color: black; border: 2px solid white; padding: 1rem; display: flex; justify-content: center; align-items: center; height: 250px;">
-      <img src="../FOTOS/partitura_arara.png" alt="Partitura del toque Arará" style="max-width: 100%; max-height: 100%;">
+    <!-- Partitura (marco negro) + Imagen lateral -->
+    <div style="display: flex; gap: 1rem; height: 250px; margin-bottom: 1rem;">
+
+      <!-- Marco negro: solo partitura -->
+      <div style="flex: 2; background-color: black; border: 2px solid white; padding: 1rem; display: flex; justify-content: center; align-items: center;">
+        <img src="../FOTOS/partitura_arara.png" alt="Partitura del toque Arará" style="max-width: 100%; max-height: 100%;">
+      </div>
+
+      <!-- Imagen lateral con misma altura -->
+      <div style="flex: 1; height: 250px;">
+        <img src="../FOTOS/tambores_bata.jpg" alt="Conjunto de tambores Batá" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
+
     </div>
 
     <!-- Enlaces con miniaturas -->
-    <div style="margin-top: 1rem; display: flex; gap: 0.5rem; overflow-x: auto;">
+    <div style="display: flex; gap: 0.5rem; overflow-x: auto;">
       <a href="../AUDIOS/tambores_bata.mp3">
         <img src="../FOTOS/tambores_bata.jpg" alt="Tambores Batá" style="height: 80px; border: 1px solid white; border-radius: 4px;">
       </a>
