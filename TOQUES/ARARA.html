@@ -28,7 +28,7 @@
       width: 200px;
       padding: 1rem;
       box-sizing: border-box;
-    }
+    
     .boton {
       display: block;
       width: 100%;
@@ -141,8 +141,10 @@
     <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
   </a>
-  
 
+  <img src="../FOTOS/STOP.jpg" alt="Detener audio" title="Detener"
+     style="height: 80px; width: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer; object-fit: cover;"
+     onclick="document.getElementById('reproductor').pause(); document.getElementById('reproductor').currentTime = 0;">
   </div>
 
   </main>
