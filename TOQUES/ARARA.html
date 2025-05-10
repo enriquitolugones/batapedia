@@ -105,28 +105,53 @@
              style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
       </div>
     </div>
+<!-- Enlaces con miniaturas + botón MAWÒ -->
+<div style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+  <!-- Botón invisible para reproducir -->
+  <audio id="reproductor" style="display: none;">
+    <source src="../AUDIOS/ARARA.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
 
-    <!-- Enlaces con miniaturas -->
-      <div style="display: flex; justify-content: space-between; align-items: center; height: 80px;">      
-      <a href="../AUDIOS/ARARA.mp3">
-        <img src="../FOTOS/ENUS_BATAS.jpg" alt="Tambores Batá" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-      <a href="../AUDIOS/ARARA_IYA.mp3">
-        <img src="../FOTOS/IYA.jpg" alt="Iyá" title="Iyá" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-      <a href="../AUDIOS/ARARA_ITOTELE.mp3">
-        <img src="../FOTOS/ITOTELE.jpg" alt="Itótele" title="Itótele" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-      <a href="../AUDIOS/ARARA_OKONKOLO.mp3">
-        <img src="../FOTOS/OKONKOLO.jpg" alt="Okónkolo" title="Okónkolo" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-      <a href="../discografia.html">
-        <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde Escuchar este Toque" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-      <a href="../cantos.html">
-        <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque" style="height: 80px; border: 1px solid white; border-radius: 4px;">
-      </a>
-    </div>
+  <!-- 6 botones clásicos con imágenes -->
+  <img src="../FOTOS/ENUS_BATAS.jpg" alt="Tambores Batá" title="Tambores Batá"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/IYA.jpg" alt="Iyá" title="Iyá"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_IYA.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/ITOTELE.jpg" alt="Itótele" title="Itótele"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_ITOTELE.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/OKONKOLO.jpg" alt="Okónkolo" title="Okónkolo"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_OKONKOLO.mp3'; document.getElementById('reproductor').play();">
+  <a href="../discografia.html">
+    <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
+         style="height: 80px; border: 1px solid white; border-radius: 4px;">
+  </a>
+  <a href="../cantos.html">
+    <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
+         style="height: 80px; border: 1px solid white; border-radius: 4px;">
+  </a>
+
+  <!-- Botón MAWÒ -->
+  <div onclick="document.getElementById('reproductor').pause();" 
+       style="height: 80px; width: 80px; display: flex; justify-content: center; align-items: center; border: 2px solid white; border-radius: 4px; font-weight: bold; font-size: 0.9rem; background-color: black; color: white; cursor: pointer;">
+    MAWÒ
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    
 
   </div>
 
