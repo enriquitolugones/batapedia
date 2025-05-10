@@ -129,6 +129,16 @@
              style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
       </div>
     </div>
+<!-- Botones de información TOQUE y CANTO -->
+<div style="display: flex; justify-content: flex-start; gap: 1rem; margin-bottom: 1rem;">
+  <button onclick="mostrarInfo('toque')" style="padding: 0.6rem 1.2rem; font-weight: bold; background-color: white; color: black; border: none; border-radius: 4px; cursor: pointer;">
+    INFO TOQUE
+  </button>
+  <button onclick="mostrarInfo('canto')" style="padding: 0.6rem 1.2rem; font-weight: bold; background-color: white; color: black; border: none; border-radius: 4px; cursor: pointer;">
+    INFO CANTO
+  </button>
+</div>
+    
 <!-- Reproductor invisible -->
 <audio id="reproductor" style="display: none;">
   <source id="audioSource" src="" type="audio/mpeg">
@@ -198,22 +208,28 @@ function detenerAudio() {
   audio.pause();
   audio.currentTime = 0;
 }
-</script>
-
-
-
-
-
-
-
-
-
-
-    
-
+</script>  
   </div>
 
   </main>
-</div>  
+</div> 
+  <script>
+  function mostrarInfo(tipo) {
+    const contenedor = document.getElementById('contenedor-info');
+    contenedor.style.display = 'block';
+    
+    if (tipo === 'toque') {
+      contenedor.innerHTML = `
+        <h3>Relación de este toque con otros</h3>
+        <p>Este toque se emplea también en contextos rituales específicos relacionados con Babalú Ayé. Puede combinarse con formas rítmicas similares como Yakotá o Ñongo.</p>
+      `;
+    } else if (tipo === 'canto') {
+      contenedor.innerHTML = `
+        <h3>Cantos asociados a este toque</h3>
+        <p>Este toque se acompaña frecuentemente con cantos dedicados a Babalú Ayé. Puedes consultar la sección de cantos para escuchar ejemplos concretos.</p>
+      `;
+    }
+  }
+</script>
 </body>
 </html>
