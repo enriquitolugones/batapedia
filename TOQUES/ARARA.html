@@ -133,10 +133,10 @@
   <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
        style="height: 80px; border-radius: 4px;">
   </div> 
-       <a href="../cantos.html">
-       <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
-         style="height: 80px; border: 1px solid white; border-radius: 4px;">
-       </a>
+       <div onclick="mostrarTextoLibro()" style="height: 80px; cursor: pointer;">
+  <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
+       style="height: 80px; border: 1px solid white; border-radius: 4px;">
+</div>
 
  <!-- Botón MAWÒ sin borde, vibrante -->
 <div onclick="detenerAudio()" 
@@ -201,6 +201,12 @@ function detenerAudio() {
   function mostrarPartitura() {
     const marco = document.getElementById('marcoPartitura');
     marco.innerHTML = '<img src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">';
+  }
+</script>
+  <script>
+  function mostrarTextoLibro() {
+    const marco = document.getElementById('marcoPartitura');
+    marco.innerHTML = '<p style="text-align:center; font-size: 1.1rem; color: white;">ESTOY DENTRO DEL BOTÓN LIBRO</p>';
   }
 </script>
 </body>
