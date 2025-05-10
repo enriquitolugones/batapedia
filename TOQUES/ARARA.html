@@ -126,14 +126,14 @@
   <img src="../FOTOS/OKONKOLO.jpg" alt="Okónkolo" title="Okónkolo"
        style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
        onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_OKONKOLO.mp3'; document.getElementById('reproductor').play();">
-  <a href="../discografia.html">
-    <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
+  <div onclick="mostrarTextoEnMarco()" style="height: 80px; cursor: pointer;">
+  <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
+       style="height: 80px; border-radius: 4px;">
+  </div> 
+       <a href="../cantos.html">
+       <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
-  </a>
-  <a href="../cantos.html">
-    <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
-         style="height: 80px; border: 1px solid white; border-radius: 4px;">
-  </a>
+       </a>
 
  <!-- Botón MAWÒ sin borde, vibrante -->
 <div onclick="detenerAudio()" 
@@ -170,5 +170,28 @@ function detenerAudio() {
   audio.currentTime = 0;
 }
 </script>
+<script>
+  function mostrarTextoEnMarco() {
+    const marco = document.getElementById('marcoPartitura');
+    marco.innerHTML = '<p style="text-align:center; font-size: 1.1rem; color: white;">ESTOY DENTRO DEL BOTÓN DE RADIO ANTIGUO</p>';
+  }
+</script>
+<script>
+  function reproducirYMostrarTexto(ruta) {
+    const audio = document.getElementById('reproductor');
+    audio.src = ruta;
+    audio.play();
+
+    // Cambiar la partitura por texto
+    const marco = document.getElementById('marcoPartitura');
+    marco.innerHTML = '<p style="text-align:center; font-size: 1.1rem; color: white;">ESTOY DENTRO DEL BOTÓN DE RADIO ANTIGUO</p>';
+  }
+
+  function detenerAudio() {
+    const audio = document.getElementById('reproductor');
+    audio.pause();
+    audio.currentTime = 0;
+  }
+</script>  
 </body>
 </html>
