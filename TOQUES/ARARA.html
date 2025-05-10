@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TOQUE ARARA</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      height: 100%;
+    }
+    header {
+      background: url('../FOTOS/banner_difuminado_suave.jpg') center/cover no-repeat;
+      height: 150px;
+      width: 100%;
+    }
+    .contenido {
+      display: flex;
+      height: calc(100% - 150px);
+      align-items: stretch;
+    }
+    nav {
+      width: 200px;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .boton {
+      display: block;
+      width: 100%;
+      margin-bottom: 1.4rem;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      text-decoration: none;
+      font-size: 0.82rem;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+    .rojo { background-color: red; }
+    .verde { background-color: limegreen; }
+    main {
+      flex: 1;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .cuadro-central {
+      border: 1px solid white;
+      padding: 1rem;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 410px;
+      position: relative;
+    }
+    .cuadro-central h2, .cuadro-central p {
+      margin: 0.5rem 0;
+    }
+    
+  </style>
+</head>
+<body>
+<header></header>
+<div class="contenido">
+  <nav style="margin-top: 2.5rem;">
+    <a href="../index.html" class="boton rojo">INICIO</a>
+    <a href="../orichas.html"class="boton verde" >ORICHAS</a>
+    <a class="boton rojo" href="file:///Users/enriquelugones/Desktop/oricha.html#">CANCIONES</a>
+    <a href="../toques_de_bata" class="boton verde" >TOQUES DE BATÁ</a>
+    <a class="boton rojo" href="file:///Users/enriquelugones/Desktop/oricha.html#">TRANSCRIPCIONES</a>
+    <a class="boton verde" href="file:///Users/enriquelugones/Desktop/oricha.html#">DISCOGRAFÍA</a>
+  </nav>
+
+  <main>
+  <div class="cuadro-central"> <!-- MARCO CENTRAL -->
+
+    <!-- Parte superior: Título y Oricha -->
+    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+      <h2 style="margin: 0;">TOQUE ARARÁ</h2>     <!-- TOQUE -->
+      <div style="text-align: right;">
+        <h3 style="margin: 0;">ORICHAS</h3>      
+        <p style="margin: 0;">Babalú Ayé</p>      <!-- ORICHAS A QUE SE LES TOCA -->
+      </div>
+    </div>
+
+    <!-- Partitura (marco negro) + Imagen lateral -->
+    <div style="display: flex; gap: 1rem; height: 250px; margin-bottom: 1rem;"> 
+    
+    <!-- Marco negro: solo partitura -->
+    <div style="flex: 4; background-color: black; border: 2px solid white; padding: 1rem; overflow-y: auto; display: flex; justify-content: center; align-items: start;">
+       <img src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">  
+     </div>
+      
+<!-- Imagen lateral con misma altura -->
+      <div style="flex: 1; height: 250px;">
+        <img src="../FOTOS/TAMBORES_BATA.jpg" alt="Conjunto de tambores Batá" 
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
+    </div>
+<!-- Enlaces con miniaturas + botón MAWÒ -->
+<div style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+  <!-- Botón invisible para reproducir -->
+  <audio id="reproductor" style="display: none;">
+    <source src="../AUDIOS/ARARA.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- 6 botones clásicos con imágenes -->
+  <img src="../FOTOS/ENUS_BATAS.jpg" alt="Tambores Batá" title="Tambores Batá"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/IYA.jpg" alt="Iyá" title="Iyá"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_IYA.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/ITOTELE.jpg" alt="Itótele" title="Itótele"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_ITOTELE.mp3'; document.getElementById('reproductor').play();">
+  <img src="../FOTOS/OKONKOLO.jpg" alt="Okónkolo" title="Okónkolo"
+       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_OKONKOLO.mp3'; document.getElementById('reproductor').play();">
+  <a href="../discografia.html">
+    <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
+         style="height: 80px; border: 1px solid white; border-radius: 4px;">
+  </a>
+  <a href="../cantos.html">
+    <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
+         style="height: 80px; border: 1px solid white; border-radius: 4px;">
+  </a>
+
+  <!-- Botón MAWÒ -->
+  <div onclick="document.getElementById('reproductor').pause();" 
+       style="height: 80px; width: 80px; display: flex; justify-content: center; align-items: center; border: 2px solid white; border-radius: 4px; font-weight: bold; font-size: 0.9rem; background-color: black; color: white; cursor: pointer;">
+    MAWÒ
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+
+  </div>
+
+  </main>
+</div>  
+</body>
+</html>
