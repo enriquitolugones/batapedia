@@ -135,27 +135,37 @@
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
   </a>
 
-  <!-- Botón MAWÒ -->
-  <div onclick="document.getElementById('reproductor').pause();" 
-       style="height: 80px; width: 80px; display: flex; justify-content: center; align-items: center; border: 2px solid white; border-radius: 4px; font-weight: bold; font-size: 0.9rem; background-color: black; color: white; cursor: pointer;">
-    MAWÒ
+  <!-- Botón MAWÒ animado -->
+<div onclick="detenerAudio()" 
+     style="padding: 0.5rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1.2rem; user-select: none; animation: none; color: white; border: 2px solid white;"
+     onmouseover="this.style.animation='latido 0.8s infinite';"
+     onmouseout="this.style.animation='none';">
+  MÀWÒ... ò́ ♪
+</div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-    
 
   </div>
 
   </main>
 </div>  
+  <style>
+@keyframes latido {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<script>
+function detenerAudio() {
+  const audio = document.getElementById('reproductor');
+  audio.pause();
+  audio.currentTime = 0;
+}
+</script>
 </body>
 </html>
