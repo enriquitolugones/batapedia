@@ -134,7 +134,7 @@
   
  <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
      style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
-     onclick="mostrarIframe();">
+     onclick="mostrarIframe(this)" data-src="../TOQCAN/cantos_arara.html">
 
  <!-- Botón MAWÒ sin borde, vibrante -->
 <div onclick="detenerAudio()" 
@@ -144,12 +144,7 @@
   MÀWÒ... ò́ ♪
 </div>  <!-- Final del botón MAWÒ -->
   
-</div>  <!-- Fin de fila de botones e imagenes -->
-
-    <!-- Marco donde se carga la página de cantos -->
-<div id="marcoPartitura" style="margin-top: 1rem; border: 2px solid white; border-radius: 8px; height: 400px; display: none;">
-  <!-- Aquí aparecerá el iframe al pulsar el botón -->
-</div>
+</div>  <!-- Fin de fila de botones e imagenes --
     
 </div>  <!-- Fin de .cuadro-central -->
     
@@ -176,25 +171,20 @@ function detenerAudio() {
   audio.currentTime = 0;
 }
 </script>
-<script>
-<script>
-function cargarPagina() {
-  const marco = document.getElementById('marcoPartitura');
-  marco.innerHTML = '<iframe src="../TOQCAN/cantos_arara.html" style="width: 100%; height: 100%; border: none;"></iframe>';
-}
-</script>
-</script>
+
   <script>
-function mostrarIframe() {
+function mostrarIframe(elemento) {
   const marco = document.getElementById('marcoPartitura');
-  marco.innerHTML = ''; // Limpia el contenido anterior
+  const ruta = elemento.getAttribute('data-src');
+  marco.innerHTML = '';
   const iframe = document.createElement('iframe');
-  iframe.src = '../TOQCAN/cantos_arara.html';
+  iframe.src = ruta;
   iframe.style.width = '100%';
   iframe.style.height = '100%';
   iframe.style.border = 'none';
   marco.appendChild(iframe);
 }
+</script>
 </script>
 </body>
 </html>
