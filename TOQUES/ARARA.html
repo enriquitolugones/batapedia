@@ -126,10 +126,12 @@
   <img src="../FOTOS/OKONKOLO.jpg" alt="Okónkolo" title="Okónkolo"
        style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
        onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_OKONKOLO.mp3'; document.getElementById('reproductor').play();">
+  
   <a href="../discografia.html">
     <img src="../FOTOS/DISCOGRAFIA.jpg" alt="Discografía" title="Donde escuchar este Toque"
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
   </a>
+  
   <div onclick="cargarPagina()" style="height: 80px; cursor: pointer;">
     <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
@@ -173,7 +175,7 @@ function detenerAudio() {
 <script>
 function cargarPagina() {
     const marco = document.getElementById('marcoPartitura'); 
-    marco.innerHTML = '<iframe src="../TOQUES/cantos_que_acompanan_al_toque.html" style="width: 100%; height: 100%; border: none;"></iframe>';
+    marco.innerHTML = '<iframe src="../TOQUES/CANTOS_ACOMPAÑANTES/cantos_que_acompanan_al_toque.html" style="width: 100%; height: 100%; border: none;"></iframe>';
 }
 </script>
   
