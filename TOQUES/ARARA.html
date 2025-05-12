@@ -94,9 +94,9 @@
     <!-- Partitura (marco negro) + Imagen lateral -->
     <div style="display: flex; gap: 1rem; height: 250px; margin-bottom: 1rem;"> 
     
-    <!-- Marco negro: solo partitura -->
-    <div id="marcoPartitura" style="flex: 4; background-color: black; border: 2px solid white; padding: 1rem; overflow-y: auto; display: flex; justify-content: center; align-items: start;">
-   <img src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">  
+    <!-- Marco negro: partitura o iframe -->
+<div id="marcoPartitura" style="flex: 4; background-color: black; border: 2px solid white; padding: 1rem; overflow-y: auto; display: flex; justify-content: center; align-items: start;">
+   <img id="partituraImg" src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">  
 </div>
       
 <!-- Imagen lateral con misma altura -->
@@ -132,10 +132,9 @@
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
   </a>
   
-  <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
+ <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
      style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
-     onclick="cargarPagina();">
-</a>
+     onclick="mostrarIframe();">
 
  <!-- Botón MAWÒ sin borde, vibrante -->
 <div onclick="detenerAudio()" 
@@ -185,6 +184,17 @@ function cargarPagina() {
 }
 </script>
 </script>
-  
+  <script>
+function mostrarIframe() {
+  const marco = document.getElementById('marcoPartitura');
+  marco.innerHTML = ''; // Limpia el contenido anterior
+  const iframe = document.createElement('iframe');
+  iframe.src = '../TOQCAN/cantos_arara.html';
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.border = 'none';
+  marco.appendChild(iframe);
+}
+</script>
 </body>
 </html>
