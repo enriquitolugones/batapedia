@@ -132,9 +132,9 @@
          style="height: 80px; border: 1px solid white; border-radius: 4px;">
   </a>
   
-  <a href="../TOQCAN/cantos_arara.html" target="_blank">
   <img src="../FOTOS/CANTOS.jpg" alt="Cantos que acompaña" title="Cantos de este Toque"
-       style="height: 80px; border: 1px solid white; border-radius: 4px;">
+     style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+     onclick="cargarPagina();">
 </a>
 
  <!-- Botón MAWÒ sin borde, vibrante -->
@@ -146,6 +146,11 @@
 </div>  <!-- Final del botón MAWÒ -->
   
 </div>  <!-- Fin de fila de botones e imagenes -->
+
+    <!-- Marco donde se carga la página de cantos -->
+<div id="marcoPartitura" style="margin-top: 1rem; border: 2px solid white; border-radius: 8px; height: 400px; display: none;">
+  <!-- Aquí aparecerá el iframe al pulsar el botón -->
+</div>
     
 </div>  <!-- Fin de .cuadro-central -->
     
@@ -174,8 +179,9 @@ function detenerAudio() {
 </script>
 <script>
 function cargarPagina() {
-    const marco = document.getElementById('marcoPartitura'); 
-    '<iframe src="https://enriquitolugones.github.io/batapedia/TOQCAN/cantos_arara.html" style="width: 100%; height: 100%; border: none;"></iframe>';
+  const marco = document.getElementById('marcoPartitura');
+  marco.innerHTML = '<iframe src="../TOQCAN/cantos_arara.html" style="width: 100%; height: 100%; border: none;"></iframe>';
+  marco.style.display = 'block'; // Asegura que se vea
 }
 </script>
   
