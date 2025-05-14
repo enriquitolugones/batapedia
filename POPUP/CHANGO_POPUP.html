@@ -12,11 +12,13 @@
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
 
     .popup {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: fixed;
       top: 50%;
       left: 50%;
@@ -26,8 +28,10 @@
       padding: 30px;
       border-radius: 10px;
       z-index: 1000;
-      width: 500px;
-      max-width: 90%;
+      width: 90%;
+      max-width: 600px;
+      box-sizing: border-box;
+      text-align: center;
     }
 
     .popup h2 {
@@ -45,21 +49,19 @@
 
     .popup table {
       width: 100%;
-      text-align: left;
       margin: 1rem 0;
-      border-spacing: 0 8px;
+      border-spacing: 0 10px;
+      text-align: center;
     }
 
     .popup td {
       width: 50%;
-      vertical-align: top;
-      padding: 0;
       font-size: 0.95rem;
     }
 
     .popup .saludo {
       margin-top: 20px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
@@ -79,6 +81,7 @@
       justify-content: center;
       gap: 10px;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .return-btn {
