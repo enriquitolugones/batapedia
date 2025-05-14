@@ -59,21 +59,47 @@
         .return-btn:hover {
             background-color: #666;
         }
+        .botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.return-btn {
+  background-color: #111;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.return-btn:hover {
+  background-color: limegreen;
+  color: black;
+  cursor: pointer;
+}
     </style>
 </head>
 <body>
 
     <div class="popup" id="chango-popup">
-        <button class="close-btn" onclick="document.getElementById('chango-popup').style.display='none'">&times;</button>
-        <h2>CHANGÓ</h2>
-        <img src="../FOTOS/CHANGO.png" alt="CHANGO">
-        <p>Chango es el dios del trueno, la danza, y los tambores Batá. Sincretiza con Santa Bárbara.</p>
-        <p>Colores: Rojo y Blanco</p>
-        <p>Número: 4</p>
-        <a href="../cantos.html#chango" class="return-btn">Ver Cantos de Changó</a>
-        <a href="../toques_de_bata.html#chango" class="return-btn">Ver Toques de Changó</a>
-        <a href="../orichas.html" class="return-btn">Volver a Orichas</a>
-    </div>
+  <button class="close-btn" onclick="document.getElementById('chango-popup').style.display='none'">&times;</button>
+  <h2>CHANGÓ</h2>
+  <img src="../FOTOS/CHANGO.png" alt="CHANGO">
+  <p>Chango es el dios del trueno, la danza, y los tambores Batá. Sincretiza con Santa Bárbara.</p>
+  <p>Colores: Rojo y Blanco</p>
+  <p>Número: 4</p>
+
+  <div class="botones">
+    <a href="../cantos.html#chango" class="return-btn">CANTOS</a>
+    <a href="../toques_de_bata.html#chango" class="return-btn">TOQUES</a>
+    <a href="../orichas.html" class="return-btn">VOLVER</a>
+  </div>
+</div>
 
 </body>
 </html>
