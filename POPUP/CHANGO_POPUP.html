@@ -2,105 +2,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventana Emergente CHANGÓ</title>
-    <style>
-        body {
-    background-color: black;
-    color: white;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CHANGÓ</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-.popup {
-    display: block;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    width: 500px; /* MÁS ANCHO */
-    text-align: center;
-}
+    .popup {
+      display: block;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 1000;
+      width: 500px;
+      max-width: 90%;
+      text-align: center;
+    }
 
-.popup h2 {
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-}
+    .popup h2 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
 
-.popup img {
-    width: 150px;   /* MÁS GRANDE */
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
+    .popup img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
 
-.popup p {
-    margin: 10px 0;
-    line-height: 1.6;
-    font-size: 1rem;
-    padding: 0 1rem;
-}
+    .popup p {
+      margin: 6px 0;
+      font-size: 1rem;
+    }
 
-.popup .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 20px;
-    color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
+    .popup .info {
+      text-align: left;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.4rem;
+    }
 
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
+    .popup .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 22px;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
 
-.return-btn {
-    background-color: #111;
-    color: white;
-    border: 2px solid white;
-    padding: 10px 14px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-.return-btn:hover {
-    background-color: limegreen;
-    color: black;
-    cursor: pointer;
-}
-    </style>
+    .return-btn {
+      background-color: #111;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 14px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .return-btn:hover {
+      background-color: limegreen;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="popup" id="chango-popup">
-  <button class="close-btn" onclick="document.getElementById('chango-popup').style.display='none'">&times;</button>
-  <h2>CHANGÓ</h2>
-  <img src="../FOTOS/CHANGO.png" alt="CHANGO">
-  <p>Chango es el dios del trueno, la danza, y los tambores Batá. Sincretiza con Santa Bárbara.</p>
-  <p>Colores: Rojo y Blanco</p>
-  <p>Número: 4</p>
+  <div class="popup" id="chango-popup">
+    <button class="close-btn" onclick="document.getElementById('chango-popup').style.display='none'">&times;</button>
+    <h2>CHANGÓ</h2>
+    <img src="../FOTOS/CHANGO.png" alt="CHANGÓ" />
+    <p>Chango es el dios del trueno, la danza y los tambores Batá. Sincretiza con Santa Bárbara.</p>
+    <p>Colores: Rojo y Blanco</p>
+    <p>Número: 4</p>
 
-  <div class="botones">
-    <a href="../cantos.html#chango" class="return-btn">CANTOS</a>
-    <a href="../toques_de_bata.html#chango" class="return-btn">TOQUES</a>
-    <a href="../orichas.html" class="return-btn">VOLVER</a>
+    <div class="info">
+      <p><strong>Nombre en yoruba:</strong> Ṣàngó</p>
+      <p><strong>Día de la semana:</strong> Miércoles</p>
+      <p><strong>Herramienta:</strong> Hacha doble</p>
+      <p><strong>Piedra:</strong> Piedra de rayo</p>
+      <p><strong>Saludo:</strong> ¡Kabiosile, Shangó!</p>
+    </div>
+
+    <div class="botones">
+      <a href="../orichas.html" class="return-btn">Volver</a>
+      <a href="../cantos.html#chango" class="return-btn">Cantos</a>
+      <a href="../toques_de_bata.html#chango" class="return-btn">Toques</a>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
