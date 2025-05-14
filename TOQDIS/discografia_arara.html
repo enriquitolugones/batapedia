@@ -43,6 +43,17 @@
     }
     .canto {
       display: inline;
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .canto:hover {
+      color: limegreen;
+    }
+    #spotify-player {
+      margin-top: 20px;
+      display: none;
+      text-align: center;
     }
   </style>
 </head>
@@ -52,17 +63,29 @@
 
   <div class="bloque">
     <h2>John Santos y Coro Folklórico Kindembo – *Hacia el Amor* (pista 9)</h2>
-    <div class="registro"><span class="tiempo">[1:36–4:04]</span><span class="oricha">Babalú Ayé</span><span class="canto">sara wode</span></div>
+    <div class="registro"><span class="tiempo">[1:36–4:04]</span><span class="oricha">Babalú Ayé</span><span class="canto" onclick="mostrarSpotify()">sara wode</span></div>
     <div class="registro"><span class="tiempo">[4:04–4:42]</span><span class="oricha"> </span><span class="canto">yemala lode acheto mayawé ala ufanfa</span></div>
     <div class="registro"><span class="tiempo">[4:42–5:50]</span><span class="oricha"> </span><span class="canto">¿?</span></div>
   </div>
 
   <div class="bloque">
     <h2>Lázaro Ros – *Orisha Aye: Babalu Aye* (pista 6)</h2>
-    <div class="registro"><span class="tiempo">[0:00–3:31]</span><span class="oricha">Babalú Ayé</span><span class="canto">sara wode</span></div>
+    <div class="registro"><span class="tiempo">[0:00–3:31]</span><span class="oricha">Babalú Ayé</span><span class="canto" onclick="mostrarSpotify()">sara wode</span></div>
     <div class="registro"><span class="tiempo">[3:31–4:50]</span><span class="oricha">Babalú Ayé</span><span class="canto">awa tokiki maise boa</span></div>
     <div class="registro"><span class="tiempo">[4:50–5:54]</span><span class="oricha">Babalú Ayé</span><span class="canto">somo somo somo dea</span></div>
   </div>
+
+  <div id="spotify-player">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2qfcBY49nhRMnsc9zKQeoY?utm_source=generator" 
+    width="100%" height="152" frameBorder="0" allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <script>
+    function mostrarSpotify() {
+      document.getElementById("spotify-player").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
