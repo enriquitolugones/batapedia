@@ -7,80 +7,81 @@
     <title>Ventana Emergente CHANGÓ</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .popup {
-            display: block;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 1000;
-            width: 300px;
-            text-align: center;
-        }
-        .popup h2 {
-            margin-bottom: 10px;
-        }
-        .popup img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-        }
-        .popup .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 20px;
-            color: white;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-        .return-btn {
-            background-color: #444;
-            color: white;
-            border: 2px solid white;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        .return-btn:hover {
-            background-color: #666;
-        }
-        .botones {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.popup {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 500px; /* MÁS ANCHO */
+    text-align: center;
+}
+
+.popup h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.popup img {
+    width: 150px;   /* MÁS GRANDE */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.popup p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .return-btn {
-  background-color: #111;
-  color: white;
-  border: 2px solid white;
-  padding: 10px 14px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+    background-color: #111;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .return-btn:hover {
-  background-color: limegreen;
-  color: black;
-  cursor: pointer;
+    background-color: limegreen;
+    color: black;
+    cursor: pointer;
 }
     </style>
 </head>
