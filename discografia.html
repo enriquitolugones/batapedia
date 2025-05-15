@@ -52,16 +52,14 @@
       flex-direction: column;
     }
     .cuadro-central {
-      border: 1px solid white;
-      padding: 1rem;
-      margin-top: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 410px;
-      position: relative;
-      overflow-y: auto;
-    }
+  border: 1px solid white;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  overflow-y: auto;
+}
     .dos-columnas {
       display: flex;
       justify-content: sapace-between;
@@ -153,10 +151,16 @@
   <main>
     
    <div class="cuadro-central">
-   <!-- Buscador -->
-<input type="text" id="buscador" placeholder="Buscar disco..." style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; font-size: 1rem;">
-    <!-- Lista -->
-    <div class="list">
+     
+   <!-- Buscador Fijo -->
+     <div class="buscador-fijo" style="position: sticky; top: 0; background-color: black; padding-bottom: 1rem; z-index: 1;">
+    <input type="text" id="buscador" placeholder="Busca el disco que..." 
+           style="width: 100%; padding: 0.5rem; font-size: 1rem;">
+  </div>
+       
+        <!-- Lista de discos -->
+  <div id="contenedor-discos" class="list">
+  
       <h3>DISCOS DE MUSICA AFROCUBANA</h3>
     </br>
 <a href="#">Alfredo Calvo y su Aña Oba Tola & Alberto Puñales y su Bembe Makagua , Bata y Bembe de Matanzas I</a>
