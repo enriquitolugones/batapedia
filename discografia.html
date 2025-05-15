@@ -90,6 +90,11 @@
   display: block;
   margin-bottom: 0.5rem;
   transition: background-color 0.3s;
+  white-space: normal;            /* Permite salto de línea */
+  word-break: break-word;         /* Rompe palabra si es larga */
+  overflow-wrap: break-word;      /* Refuerzo para romper si hace falta */
+  line-height: 1.3;               /* Altura de línea más cómoda */
+  font-size: 0.9rem;              /* Tamaño ligeramente más compacto */
 }
 
 .list a:hover {
@@ -148,7 +153,8 @@
   <main>
     
    <div class="cuadro-central">
-   
+   <!-- Buscador -->
+<input type="text" id="buscador" placeholder="Buscar disco..." style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; font-size: 1rem;">
     <!-- Lista -->
     <div class="list">
       <h3>DISCOS DE MUSICA AFROCUBANA</h3>
@@ -410,5 +416,16 @@
     </div>
   </main>
 </div>
+  <script>
+  const buscador = document.getElementById('buscador');
+  const discos = document.querySelectorAll('.list a');
+
+  buscador.addEventListener('input', () => {
+    const valor = buscador.value.toLowerCase();
+    discos.forEach(disco => {
+      disco.style.display = disco.textContent.toLowerCase().includes(valor) ? 'block' : 'none';
+    });
+  });
+</script>
 </body>
 </html>
