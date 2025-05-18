@@ -130,6 +130,9 @@ td:nth-child(3) {
 </div>
 
 <div id="spotify-container" style="margin-top: 1rem;"></div>
+
+<!-- Reproductor de Elegguá -->
+<div id="eleggua-player" style="margin-top: 1rem;"></div>
   
   <div class="tabla-contenido" style="max-height: 60vh; overflow-y: auto; border: 2px solid #00FFAA; border-radius: 6px; padding: 1rem;"> 
     
@@ -137,7 +140,7 @@ td:nth-child(3) {
   
 <!-- ORICHA 1 -->
 <tr>
-  <td class="oricha">1 - ELEGGUÁ</td>
+ <td class="oricha" onclick="reproducirEleggua()" style="cursor:pointer; color:#FF3333;"> 1 - ELEGGUÁ </td>
   <td>0:00--1:45</td>
   <td class="toque">OLUMBANSHÉ</td>
   <td>barasuayo</td>
@@ -300,6 +303,19 @@ td:nth-child(3) {
   botonMawo.addEventListener("click", function () {
     spotifyContainer.innerHTML = "";
   });
+</script>
+  <script>
+  function reproducirEleggua() {
+    const contenedor = document.getElementById("eleggua-player");
+    contenedor.innerHTML = `
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/track/0GoH5f1JlwGcjDT8D9UdRf?utm_source=generator" 
+              width="100%" height="80" frameBorder="0" allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
+    `;
+  }
 </script>
 </body>
 </html>
