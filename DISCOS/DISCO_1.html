@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>toques_de_bata</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      height: 100%;
+    }
+    header {
+      background: url('banner_difuminado_suave.jpg') center/cover no-repeat;
+      height: 150px;
+      width: 100%;
+    }
+    .contenido {
+      display: flex;
+      height: calc(100% - 150px);
+      align-items: stretch;
+    }
+    nav {
+      width: 200px;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .boton {
+      display: block;
+      width: 100%;
+      margin-bottom: 1.4rem;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      text-decoration: none;
+      font-size: 0.82rem;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+    .rojo { background-color: red; }
+    .verde { background-color: limegreen; }
+    main {
+      flex: 1;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .cuadro-central {
+      border: 1px solid white;
+      padding: 1rem;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 410px;
+      position: relative;
+      overflow-y: auto;
+    }
+    .three-lists {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .list-left, .list-center, .list-right {
+      width: 30%;
+      .list-left a, .list-center a, .list-right a {
+      background-color: #444;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid white;
+      border-radius: 5px;
+      display: block;
+      height: 25px;
+      width: 200px;
+      line-height: 50px;
+    }
+      .list-left a:hover, .list-center a:hover, .list-right a:hover {
+      background-color: limegreen;
+      cursor: pointer;
+    }      
+      .boton-toque {
+  background-color: #111;
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.boton-toque:hover {
+  background-color: limegreen;
+  color: black;
+  cursor: pointer;
+}
+   
+  </style>
+</head>
+<body>
+<header></header>
+<div class="contenido">
+  <nav style="margin-top: 2.5rem;">
+      <a href="index.html" class="boton rojo">INICIO</a>                              <!-- BOTON DE INICIO -->
+      <a href="orichas.html" class="boton verde">ORICHAS</a>                          <!-- BOTON DE ORICHAS -->            
+      <a href="cantos" class="boton rojo">CANTOS</a>                                  <!-- BOTON DE CANTOS -->
+      <a href="toques_de_bata" class="boton verde">TOQUES DE BATÁ</a>                 <!-- BOTON DE TOQUES DE BATA -->
+      <a href="#" class="boton rojo">TRANSCRIPCIONES</a>
+      <a href="discografia.html" class="boton verde">DISCOGRAFÍA</a>                  <!-- BOTON DE DISCOGRAFIA -->
+    </nav>
+  
+  <main>
+    
+   <div class="cuadro-central">
+      <h1>Toques de Batá</h1>
+      <div class="three-lists">
+        <!-- Lista Izquierda -->
+<div class="list-left">
+  <h2>Toques tipo Genérico</h2>
+  <a href="TOQUES/ARARA.html" class="boton-toque">ARARÁ</a>
+  <a href="pagina2.html" class="boton-toque">CHACHÁLOKPAFÚN</a>
+  <a href="pagina3.html" class="boton-toque">IYESÁ</a>
+  <a href="pagina3.html" class="boton-toque">RUMBA OBATALÁ</a>
+  <a href="pagina3.html" class="boton-toque">RUMBA OCHOSI</a>
+  <a href="pagina3.html" class="boton-toque">YAKOTÁ</a>
+  <a href="pagina3.html" class="boton-toque">ÑONGO</a>
+
+  <h2>Toques para Elegguá</h2>
+  <a href="pagina1.html" class="boton-toque">LATOKPA</a>
+  <a href="pagina2.html" class="boton-toque">OLUMBANSHÉ</a>
+
+  <h2>Toques para Oggún</h2>
+  <a href="pagina1.html" class="boton-toque">REZO OGGÚN</a>
+
+  <h2>Toques para Ochosi</h2>
+  <a href="pagina1.html" class="boton-toque">AGGUERÉ ( OCHOSI )</a>
+</div>
+
+<!-- Lista Central -->
+<div class="list-center">
+  <h2 id="chango">Toques para Changó</h2>
+  <a href="pagina4.html" class="boton-toque">ALADO AKUO</a>
+  <a href="pagina5.html" class="boton-toque">ALUYÁ</a>
+  <a href="pagina6.html" class="boton-toque">BAYUBÁ</a>
+  <a href="pagina4.html" class="boton-toque">EGUI KPA MI</a>
+  <a href="pagina5.html" class="boton-toque">ENI ALADO</a>
+  <a href="pagina6.html" class="boton-toque">GUENMILERE LUBE OMO OYO</a>
+  <a href="pagina6.html" class="boton-toque">KOWO KOWO</a>
+  <a href="pagina6.html" class="boton-toque">META - META</a>
+  <a href="pagina6.html" class="boton-toque">OBA TILE MI</a>
+  <a href="pagina6.html" class="boton-toque">OFERERE</a>
+  <a href="pagina6.html" class="boton-toque">OMO OKETE</a>
+  <a href="pagina6.html" class="boton-toque">SERABASE</a>
+  <a href="pagina6.html" class="boton-toque">TITÍ LARO - CHANGO</a>
+  <a href="pagina6.html" class="boton-toque">YEYE KUE</a>
+</div>
+
+<!-- Lista Derecha -->
+<div class="list-right">
+  <h2>Toques para Obatalá</h2>
+  <a href="pagina7.html" class="boton-toque">BABA DIDE</a>
+  <a href="pagina7.html" class="boton-toque">ONKI IWO LOLO</a>
+  <a href="pagina7.html" class="boton-toque">EGUAWO KUE YEYÉ</a>
+  <a href="pagina7.html" class="boton-toque">OBANLA</a>
+  <a href="pagina7.html" class="boton-toque">OBATALÁ (INTRO)</a>
+  <a href="pagina7.html" class="boton-toque">OCHIKAMBO</a>
+  <a href="pagina7.html" class="boton-toque">ODU AREMU O</a>
+  <a href="pagina7.html" class="boton-toque">REZO BABA ALAYÉ O</a>
+  <a href="pagina7.html" class="boton-toque">REZO OBATALÁ</a>
+
+  <h2>Toques para Oyá</h2>
+  <a href="pagina7.html" class="boton-toque">... IYALODA IYA OKUO</a>
+  <a href="pagina7.html" class="boton-toque">IYE IYEKUA</a>
+  <a href="pagina7.html" class="boton-toque">OYÁ POR DERECHO</a>
+  <a href="pagina7.html" class="boton-toque">OYÁ BI´KÚ</a>
+  <a href="pagina7.html" class="boton-toque">TUI - TUI</a>
+</div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
