@@ -290,10 +290,11 @@ caratula.addEventListener("click", function () {
 
     
 
-  // Activar el MÀWÒ... ò́ ♪ como botón de parada
-  botonMawo.addEventListener("click", function () {
-    spotifyContainer.innerHTML = "";
-  });
+  // Botón MÀWÒ... ò́ ♪ detiene todo
+botonMawo.addEventListener("click", function () {
+  document.getElementById("spotify-container").innerHTML = "";
+  document.getElementById("spotify-player").innerHTML = "";
+});
 </script>
 
 <script>
