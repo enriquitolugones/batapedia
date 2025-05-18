@@ -270,18 +270,25 @@ td:nth-child(3) {
   const spotifyContainer = document.getElementById("spotify-container");
   const botonMawo = document.getElementById("boton-mawo");
 
-  caratula.addEventListener("click", function () {
-    if (!spotifyContainer.innerHTML.trim()) {
-      spotifyContainer.innerHTML = `
-        <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/album/7pcxnhXM7Qkn2eTQtXOv82?utm_source=generator"
-                width="100%" height="152" frameBorder="0"
-                allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-        </iframe>
-      `;
-    }
-  });
+caratula.addEventListener("click", function () {
+  // Cierra el reproductor de temas sueltos
+  document.getElementById("spotify-player").innerHTML = "";
+
+  // Solo abre el álbum si no está ya visible
+  if (!spotifyContainer.innerHTML.trim()) {
+    spotifyContainer.innerHTML = `
+      <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/7pcxnhXM7Qkn2eTQtXOv82?utm_source=generator"
+              width="100%" height="152" frameBorder="0"
+              allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+      </iframe>
+    `;
+  }
+});
+
+
+    
 
   // Activar el MÀWÒ... ò́ ♪ como botón de parada
   botonMawo.addEventListener("click", function () {
