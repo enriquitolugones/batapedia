@@ -115,10 +115,23 @@ td:nth-child(3) {
 <!-- DENTRO del cuadro central solo va esto -->
 <div class="cuadro-central">
 
- <div class="info-album" style="display: flex; align-items: center; gap: 1rem; margin-top: 0; margin-bottom: 0.5rem;">
+ <div class="info-album" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0; margin-bottom: 0.5rem;">
+  
+  <!-- Carátula -->
   <img id="caratula" src="../FOTOS/CARATULA_DISCO_1.png" alt="Carátula del álbum"
        style="width: 100px; height: 100px; object-fit: cover; border: 2px solid #FF3333; border-radius: 6px; cursor: pointer;">
-  <h1 style="color: #FF3333; font-size: 1.6rem; margin: 0;">Música Yoruba – Conjunto Folklórico Nacional de Cuba</h1>
+  
+  <!-- Título centrado -->
+  <h1 style="color: #FF3333; font-size: 1.3rem; margin: 0; flex: 1; text-align: center;">
+    Música Yoruba – Conjunto Folklórico Nacional de Cuba
+  </h1>
+
+  <!-- Botón MAWÒ al otro lado -->
+  <button id="boton-mawo"
+          style="padding: 0.6rem 1rem; font-size: 1rem; background-color: #FF3333; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+    MÀWÒ... ò́ ♪
+  </button>
+
 </div>
 
 <div id="spotify-container" style="margin-top: 1rem;"></div>
