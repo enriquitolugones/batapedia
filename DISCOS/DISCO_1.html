@@ -126,7 +126,8 @@ td:nth-child(3) {
       style="font-weight: bold; cursor: pointer; font-size: 1.1rem;">
     MÀWÒ... ò́ ♪
   </div>
-
+<!-- Reproductor reutilizable -->
+<div id="spotify-player" style="margin-top: 1rem;"></div>
 </div>
 
 <div id="spotify-container" style="margin-top: 1rem;"></div>
@@ -140,7 +141,7 @@ td:nth-child(3) {
   
 <!-- ORICHA 1 -->
 <tr>
- <td class="oricha" onclick="reproducirEleggua()" style="cursor:pointer; color:#FF3333;"> 1 - ELEGGUÁ </td>
+ <td class="oricha" onclick="reproducirTema('0GoH5f1JlwGcjDT8D9UdRf')" style="cursor:pointer;">1 - ELEGGUÁ</td>
   <td>0:00--1:45</td>
   <td class="toque">OLUMBANSHÉ</td>
   <td>barasuayo</td>
@@ -312,6 +313,18 @@ td:nth-child(3) {
               src="https://open.spotify.com/embed/track/0GoH5f1JlwGcjDT8D9UdRf?utm_source=generator" 
               width="100%" height="80" frameBorder="0" allowfullscreen="" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
+    `;
+  }
+</script>
+  <script>
+  function reproducirTema(trackID) {
+    document.getElementById("spotify-player").innerHTML = `
+      <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/${trackID}"
+              width="100%" height="80" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy">
       </iframe>
     `;
