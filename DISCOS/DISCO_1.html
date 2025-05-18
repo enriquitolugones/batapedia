@@ -315,22 +315,26 @@ botonMawo.addEventListener("click", function () {
     `;
   }
 </script>
-  <script>
+ <script>
   function reproducirTema(trackID) {
     // Cierra el reproductor del álbum si está activo
-    const albumPlayer = document.getElementById("spotify-container");
-    albumPlayer.innerHTML = "";
+    document.getElementById("spotify-container").innerHTML = "";
 
-    // Inserta el nuevo track desde el segundo cero
+    // Cierra también cualquier reproductor anterior de tema
     const player = document.getElementById("spotify-player");
-    player.innerHTML = `
-      <iframe style="border-radius:12px"
-              src="https://open.spotify.com/embed/track/${trackID}?autoplay=1"
-              width="100%" height="80" frameBorder="0" allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy">
-      </iframe>
-    `;
+    player.innerHTML = "";
+
+    // Espera un poquito antes de insertar el nuevo (importante)
+    setTimeout(() => {
+      player.innerHTML = `
+        <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/${trackID}?autoplay=1"
+                width="100%" height="80" frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+        </iframe>
+      `;
+    }, 200); // pequeña pausa para asegurar reinicio
   }
 </script>
 </body>
