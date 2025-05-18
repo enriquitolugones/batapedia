@@ -137,10 +137,7 @@ td:nth-child(3) {
 
 <div id="spotify-container" style="margin-top: 1rem;"></div>
 
-<button id="boton-mawo"
-        style="margin-top: 1rem; padding: 0.6rem 1rem; font-size: 1rem; background-color: #FF3333; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: none;">
-  MÀWÒ... ò́ ♪
-</button>
+
   
   <div class="tabla-contenido" style="max-height: 60vh; overflow-y: auto; border: 2px solid #00FFAA; border-radius: 6px; padding: 1rem;"> 
     
@@ -304,13 +301,12 @@ td:nth-child(3) {
                 loading="lazy">
         </iframe>
       `;
-      botonMawo.style.display = "inline-block";
     }
   });
 
+  // Activar el MÀWÒ... ò́ ♪ como botón de parada
   botonMawo.addEventListener("click", function () {
     spotifyContainer.innerHTML = "";
-    botonMawo.style.display = "none";
   });
 </script>
 </body>
