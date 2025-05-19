@@ -127,7 +127,14 @@ td:nth-child(3) {
     MÀWÒ... ò́ ♪
   </div>
 <!-- Reproductor reutilizable -->
-<div id="spotify-player" style="margin-top: 1rem;"></div>
+ <div id="spotify-player" style="margin-top: 0; width: 100%; height: 80px; display: flex; align-items: center;"></div>
+
+  <!-- Línea de tiempo para Elegguá -->
+<div id="linea-tiempo" style="margin-top: 0.4rem; height: 20px; background: #222; border-radius: 4px; position: relative;"></div>
+  <!-- Línea de tiempo visual -->
+<div id="linea-tiempo" style="margin-top: 0.4rem; height: 20px; position: relative; background: #222; border-radius: 4px; overflow: hidden;"></div>
+  <!-- Las marcas se insertarán aquí con JavaScript -->
+</div>
   <div id="spotify-container" style="margin-top: 1rem;"></div>
 </div>
 
@@ -336,6 +343,39 @@ botonMawo.addEventListener("click", function () {
       `;
     }, 200); // pequeña pausa para asegurar reinicio
   }
+   if (trackID === "2tNc8CbX63N3TaV0rZasrL") {
+  mostrarMarcasEleggua();
+} else {
+  document.getElementById("linea-tiempo").innerHTML = "";
+}
+   <script>
+function mostrarMarcasEleggua() {
+  const linea = document.getElementById("linea-tiempo");
+  linea.innerHTML = ""; // limpiamos si hay marcas anteriores
+
+  const duracionSeg = 148; // duración total en segundos (2:28)
+  const marcas = [
+    { tiempo: 0, color: "red", etiqueta: "OLUMBANSHÉ" },
+    { tiempo: 105, color: "lime", etiqueta: "CHACHÁLOKPAFÚÑ" }, // 1:45
+  ];
+
+  marcas.forEach(marca => {
+    const porcentaje = (marca.tiempo / duracionSeg) * 100;
+
+    const punto = document.createElement("div");
+    punto.title = marca.etiqueta;
+    punto.style.position = "absolute";
+    punto.style.left = porcentaje + "%";
+    punto.style.top = "0";
+    punto.style.width = "6px";
+    punto.style.height = "100%";
+    punto.style.backgroundColor = marca.color;
+    punto.style.borderRadius = "3px";
+    punto.style.cursor = "pointer";
+    linea.appendChild(punto);
+  });
+}
+</script>
 </script>
 </body>
 </html>
