@@ -102,6 +102,21 @@ td:nth-child(3) {
   z-index: 10;      /* por encima del cuadro verde */
   padding: 0;
 }
+    #linea-tiempo {
+  position: absolute;
+  top: 48px; /* 19 del reproductor + 24 de altura + 5 de espacio */
+  left: 129px;
+  right: 9rem;
+  height: 30px;
+  z-index: 5;
+  background: repeating-linear-gradient(
+    to right,
+    white 0px,
+    white 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
   </style>
 </head>
 <body>
@@ -138,6 +153,7 @@ td:nth-child(3) {
   </div>
 <!-- Reproductor reutilizable -->
 <div id="spotify-player"></div>
+  <div id="linea-tiempo"></div>
   <div id="spotify-container" style="margin-top: 1rem;"></div>
 </div>
 
