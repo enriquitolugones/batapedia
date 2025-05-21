@@ -347,6 +347,9 @@ botonMawo.addEventListener("click", function () {
     document.getElementById("leyenda-partes").innerHTML = "";
     document.getElementById("linea-tiempo").style.display = "block";
 
+    // 💡 Cargar marcas visuales (milimetrada)
+    cargarMilimetrada(trackID);
+
     // Inserta el nuevo track con un pequeño delay
     setTimeout(() => {
       document.getElementById("spotify-player").innerHTML = `
@@ -359,6 +362,56 @@ botonMawo.addEventListener("click", function () {
       `;
     }, 200);
   }
+</script>
+  <!-- LISTA GLOBAL POR MARCAS -->
+  <script>
+const marcasPorTrack = {
+  "2tNc8CbX63N3TaV0rZasrL": {  // ELEGGUÁ
+    duracion: 148,
+    marcas: [
+      { segundos: 0, nombre: "OLUMBANSHÉ", color: "#00FFAA" },
+      { segundos: 105, nombre: "CHACHÁLOKPAFÚÑ", color: "#FF3333" }
+    ]
+  },
+
+  "4aEoj82toKwsbGsvEIY6Js": {  // OBATALÁ
+    duracion: 406,
+    marcas: [
+      { segundos: 0, nombre: "RUMBA OBATALÁ", color: "#00FFAA" },
+      { segundos: 181, nombre: "OBATALÁ (INTRO)", color: "#FF3333" },
+      { segundos: 302, nombre: "REZO OBATALÁ", color: "#FFDD00" },
+      { segundos: 335, nombre: "CHACHÁLOKPAFÚÑ", color: "#00DDFF" },
+      { segundos: 350, nombre: "OGGUÉ", color: "#AA88FF" },
+      { segundos: 365, nombre: "IYESÁ", color: "#00FFAA" }
+    ]
+  },
+
+  // Y así agregás el resto cuando quieras...
+};
+</script>
+  <!-- CARGAR MILIMETRADA TRACK ID UNIVERSAL -->
+  <script>
+function cargarMilimetrada(trackID) {
+  const linea = document.getElementById("linea-tiempo");
+  linea.innerHTML = "";
+
+  const track = marcasPorTrack[trackID];
+  if (!track) return; // si no hay milimetrada, salir
+
+  const { duracion, marcas } = track;
+
+  marcas.forEach(m => {
+    const marca = document.createElement("div");
+    marca.style.position = "absolute";
+    marca.style.left = `${(m.segundos / duracion) * 100}%`;
+    marca.style.top = "0";
+    marca.style.width = "2px";
+    marca.style.height = "100%";
+    marca.style.backgroundColor = m.color;
+    marca.title = m.nombre;
+    linea.appendChild(marca);
+  });
+}
 </script>
 </body>
 </html>
