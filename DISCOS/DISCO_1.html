@@ -360,5 +360,168 @@ botonMawo.addEventListener("click", function () {
     }, 200);
   }
 </script>
+  
+  <script>
+function cargarMilimetrada(trackID) {
+  let contenido = "";
+
+  switch (trackID) {
+
+    // ELEGGUÁ (track 1)
+    case "2tNc8CbX63N3TaV0rZasrL":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – OLUMBANSHÉ – barasuayo</li>
+          <li>1:45 – CHACHÁLOKPAFÚÑ – ochimini</li>
+        </ul>
+      `;
+      break;
+
+    // OBATALÁ (track 2)
+    case "4aEoj82toKwsbGsvEIY6Js":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – RUMBA OBATALÁ – iya lagua</li>
+          <li>3:01 – OBATALÁ (INTRO) – baba layé o</li>
+          <li>5:02 – REZO OBATALÁ – jekua o</li>
+          <li>5:35 – CHACHÁLOKPAFÚÑ – mo ba le</li>
+          <li>5:50 – OGGUÉ – eleri ifa</li>
+          <li>6:05 – IYESÁ – oba se ye</li>
+        </ul>
+      `;
+      break;
+
+    // YEMAYÁ (track 3)
+    case "2SJ32uMRM6pl3yles4k295":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – YAKOTÁ – yemaya asesu</li>
+          <li>2:16 – SOKU TA NIWO – sokun tani wo</li>
+          <li>3:37 – YAKOTÁ – barago ago yemaya</li>
+          <li>4:11 – OMOLODE – omolode</li>
+          <li>4:54 – WOLENCHE (DADA) – ogun fele guele</li>
+          <li>5:10 – ÑONGO – a e iyo</li>
+          <li>5:24 – OMOLODE – olubá chikini</li>
+          <li>5:56 – OMOLODE – emi odé omo odé</li>
+          <li>6:25 – OMOLODE – chikini alamó dansé</li>
+          <li>6:37 – ALARÓ – ago lona o yalé</li>
+          <li>7:24 – ALARÓ</li>
+          <li>8:14 – TANI IBOYA – ago lona o yalé</li>
+          <li>8:37 – TANI IBOYA</li>
+        </ul>
+      `;
+      break;
+
+    // CHANGÓ (track 4)
+    case "0V6Bx7umjspA58uWjr2ucv":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – CHACHÁLOKPAFÚÑ – ayele o</li>
+          <li>0:47 – CHACHÁLOKPAFÚÑ – alakata nigoba</li>
+          <li>1:18 – CHACHÁLOKPAFÚÑ – alakata nigoba</li>
+          <li>1:33 – META-META – oba ibo</li>
+        </ul>
+      `;
+      break;
+
+    // OYÁ (track 5)
+    case "7wnQVAPoB8ebVk9rdBeud7":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – (NO TOQUE) – ayaba de milé o</li>
+          <li>2:00 – (NO TOQUE) – oya wimi loro</li>
+          <li>2:40 – (NO TOQUE) – ayiloda iyá okuó</li>
+          <li>3:29 – (NO TOQUE) – oya de mariwo</li>
+          <li>3:51 – (NO TOQUE) – jere mi ocha</li>
+          <li>4:24 – (NO TOQUE) – olele</li>
+        </ul>
+      `;
+      break;
+
+    // ORULA (track 6)
+    case "2Njyy1wUD4LTWigBx0WcrO":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – ORULA – yo ko bi o bo obi</li>
+          <li>0:19 – ORULA – eriki lagua se</li>
+          <li>0:59 – ORULA – ifa o un ko</li>
+          <li>1:39 – ORULA – mayele kun fele ifa</li>
+          <li>2:08 – ORULA – yo ko bi o bo obi</li>
+        </ul>
+      `;
+      break;
+
+    // ODDUDUA (track 7)
+    case "68uAkQlRuP95s9gJ90tqO4":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – ODDUDUA – okuo ago lona</li>
+          <li>1:19 – ODDUDUA – eki baba ofu a e</li>
+          <li>2:21 – ODDUDUA – lesi mam bo-o mwalache iré</li>
+          <li>2:46 – ODDUDUA – odula we eke odumé</li>
+          <li>4:04 – ODDUDUA – bromu awa loréré</li>
+        </ul>
+      `;
+      break;
+
+    // BABALÚ AYÉ (track 8)
+    case "5CixIGkwUhcA5vGEKOIZy7":
+      contenido = `
+        <strong>Marcas:</strong>
+        <ul>
+          <li>0:00 – BARIBA OGÉ DE MA – bariba ogue de ma</li>
+          <li>0:21 – BARIBA OGÉ DE MA – aberiku to agua</li>
+          <li>1:36 – BARIBA OGÉ DE MA – baba sorroso</li>
+          <li>2:41 – YEGUA – towe towe</li>
+          <li>3:11 – YEGUA – sun yagué asoyín</li>
+          <li>3:45 – YEGUA – ma edá</li>
+          <li>4:26 – YEGUA – oda é oda é</li>
+          <li>4:43 – YEGUA – yina yina mbo lá</li>
+          <li>5:06 – OLOKUN (LA SALIDA) – ambe ala fele tó</li>
+        </ul>
+      `;
+      break;
+
+  }
+
+  document.getElementById("leyenda-partes").innerHTML = contenido;
+}
+</script>
+
+  document.getElementById("leyenda-partes").innerHTML = contenido;
+}
+</script>
+  <script>
+  function reproducirTema(trackID) {
+    // Cierra el reproductor del álbum
+    document.getElementById("spotify-container").innerHTML = "";
+
+    // Limpia reproductor anterior y activa la línea de tiempo
+    document.getElementById("spotify-player").innerHTML = "";
+    document.getElementById("linea-tiempo").style.display = "block";
+
+    // Carga la milimetrada correspondiente
+    cargarMilimetrada(trackID);
+
+    // Inserta el nuevo track con un pequeño delay
+    setTimeout(() => {
+      document.getElementById("spotify-player").innerHTML = `
+        <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/${trackID}?autoplay=1"
+                width="100%" height="80" frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+        </iframe>
+      `;
+    }, 200);
+  }
+</script>
 </body>
 </html>
