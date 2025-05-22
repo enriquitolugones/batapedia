@@ -669,13 +669,14 @@ function reproducirTema(trackID) {
     }
   });
 
-  // CAMBIAR LA NEGRITA DEL ORICHA ACTIVO
-  document.querySelectorAll(".oricha").forEach(td => {
-    td.style.fontWeight = "normal";
-  });
-  document.querySelectorAll(`tr[data-track-id="${trackID}"] .oricha`).forEach(td => {
-    td.style.fontWeight = "bold";
-  });
+ // CAMBIAR LA NEGRITA DEL ORICHA ACTIVO (solo una vez por track)
+document.querySelectorAll(".oricha").forEach(td => {
+  td.classList.remove("activa");
+});
+const filaActiva = document.querySelector(`tr[data-track-id="${trackID}"] .oricha`);
+if (filaActiva) {
+  filaActiva.classList.add("activa");
+}
 
   // Insertar el nuevo track con un pequeño delay
   setTimeout(() => {
