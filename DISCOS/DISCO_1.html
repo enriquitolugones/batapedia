@@ -390,25 +390,37 @@ const marcasPorTrack = {
 };
 </script>
   <!-- CARGAR MILIMETRADA TRACK ID UNIVERSAL -->
-  <script>
+ <script>
 function cargarMilimetrada(trackID) {
   const linea = document.getElementById("linea-tiempo");
   linea.innerHTML = "";
 
   const track = marcasPorTrack[trackID];
-  if (!track) return; // si no hay milimetrada, salir
+  if (!track) return;
 
   const { duracion, marcas } = track;
 
-  marcas.forEach(m => {
+  marcas.forEach((m, index) => {
     const marca = document.createElement("div");
     marca.style.position = "absolute";
-    marca.style.left = `${(m.segundos / duracion) * 100}%`;
-    marca.style.top = "0";
-    marca.style.width = "2px";
-    marca.style.height = "100%";
-    marca.style.backgroundColor = m.color;
+    marca.style.left = `calc(${(m.segundos / duracion) * 100}% - 4px)`;
+    marca.style.top = "-4px";
+    marca.style.width = "8px";
+    marca.style.height = "8px";
+    marca.style.borderRadius = "50%";
+    marca.style.backgroundColor = "white";
+    marca.style.border = "1px solid black";
     marca.title = m.nombre;
+    marca.classList.add("marca");
+
+    // Al hacer clic, se pone verde y resetea las demás
+    marca.onclick = () => {
+      document.querySelectorAll(".marca").forEach(el => {
+        el.style.backgroundColor = "white";
+      });
+      marca.style.backgroundColor = "limegreen";
+    };
+
     linea.appendChild(marca);
   });
 }
