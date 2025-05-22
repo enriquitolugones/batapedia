@@ -127,6 +127,10 @@ td:nth-child(3) {
   cursor: pointer;
   z-index: 11;
 }
+    tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* aclarado suave al pasar el ratón */
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
@@ -173,13 +177,16 @@ td:nth-child(3) {
 <table>
   
 <!-- ORICHA 1 -->
-<tr>
- <td class="oricha" onclick="reproducirTema('2tNc8CbX63N3TaV0rZasrL')" style="cursor:pointer;">1 - ELEGGUÁ</td>
+<tr data-segundos="0" onclick="activarMarca(this)">
+  <td class="oricha" onclick="reproducirTema('2tNc8CbX63N3TaV0rZasrL')" style="cursor:pointer;">
+    1 - ELEGGUÁ
+  </td>
   <td>0:00--1:45</td>
   <td class="toque">OLUMBANSHÉ</td>
   <td>barasuayo</td>
 </tr>
-<tr>
+
+<tr data-segundos="105" onclick="activarMarca(this)">
   <td></td>
   <td>1:45--2:28</td>
   <td class="toque">CHACHÁLOKPAFÚÑ</td>
@@ -389,19 +396,21 @@ const marcasPorTrack = {
   // Y así agregás el resto cuando quieras...
 };
 </script>
-  <!-- CARGAR MILIMETRADA TRACK ID UNIVERSAL -->
- <script>
+ <!-- CARGAR MILIMETRADA TRACK ID UNIVERSAL -->
+<script>
 function cargarMilimetrada(trackID) {
   const linea = document.getElementById("linea-tiempo");
-  linea.innerHTML = "";
+  linea.innerHTML = "";  // Limpia las marcas anteriores
 
   const track = marcasPorTrack[trackID];
-  if (!track) return;
+  if (!track) return; // Si no hay datos, salir
 
   const { duracion, marcas } = track;
 
   marcas.forEach((m, index) => {
     const marca = document.createElement("div");
+
+    // Estilo del círculo
     marca.style.position = "absolute";
     marca.style.left = `calc(${(m.segundos / duracion) * 100}% - 4px)`;
     marca.style.top = "-4px";
@@ -412,8 +421,9 @@ function cargarMilimetrada(trackID) {
     marca.style.border = "1px solid black";
     marca.title = m.nombre;
     marca.classList.add("marca");
+    marca.dataset.segundos = m.segundos;
 
-    // Al hacer clic, se pone verde y resetea las demás
+    // Comportamiento al hacer clic
     marca.onclick = () => {
       document.querySelectorAll(".marca").forEach(el => {
         el.style.backgroundColor = "white";
@@ -423,6 +433,32 @@ function cargarMilimetrada(trackID) {
 
     linea.appendChild(marca);
   });
+}
+</script>
+  <script>
+function activarMarca(fila) {
+  // 1. Quitar selección previa
+  document.querySelectorAll("tr").forEach(tr => {
+    tr.style.backgroundColor = "";
+  });
+  // 2. Resaltar fila actual
+  fila.style.backgroundColor = "#222"; // o cualquier otro color más claro
+
+  // 3. Resaltar marca correspondiente
+  const segundos = fila.dataset.segundos;
+  if (!segundos) return;
+
+  const linea = document.getElementById("linea-tiempo");
+  linea.querySelectorAll(".marca").forEach(marca => {
+    marca.style.backgroundColor = "white"; // reiniciar color
+    marca.style.transform = "scale(1)";
+  });
+
+  const marcaActiva = linea.querySelector(`.marca[data-segundos="${segundos}"]`);
+  if (marcaActiva) {
+    marcaActiva.style.backgroundColor = "limegreen";
+    marcaActiva.style.transform = "scale(1.5)";
+  }
 }
 </script>
 </body>
