@@ -131,6 +131,18 @@ td:nth-child(3) {
   background-color: rgba(255, 255, 255, 0.1); /* aclarado suave al pasar el ratón */
   cursor: pointer;
 }
+    tr[data-track-id]:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr[data-track-id].activo,
+tr[data-track-id].activo:hover {
+  background-color: #111 !important;
+}
+
+tr.activo-seleccionado {
+  background-color: #222 !important;
+}
   </style>
 </head>
 <body>
@@ -619,7 +631,13 @@ botonMawo.addEventListener("click", function () {
 
   function reproducirTema(trackID) {
     trackActivo = trackID; // ← GUARDA EL TRACK ACTIVO
-
+// Resalta todas las filas de ese track (zona activa)
+document.querySelectorAll("tr").forEach(tr => {
+  tr.style.backgroundColor = ""; // limpia todo primero
+  if (tr.dataset.trackId === trackID) {
+    tr.style.backgroundColor = "#111"; // resalta solo este track
+  }
+});
     // Cierra el reproductor del álbum
     document.getElementById("spotify-container").innerHTML = "";
 
@@ -793,22 +811,30 @@ function cargarMilimetrada(trackID) {
   });
 }
 </script>
-  <script>
+ <script>
 function activarMarca(fila) {
-  // 1. Quitar selección previa
-  document.querySelectorAll("tr").forEach(tr => {
-    tr.style.backgroundColor = "";
-  });
-  // 2. Resaltar fila actual
-  fila.style.backgroundColor = "#222"; // o cualquier otro color más claro
+  const trackID = fila.dataset.trackId;
 
-  // 3. Resaltar marca correspondiente
+  // Limpiar clases anteriores
+  document.querySelectorAll("tr").forEach(tr => {
+    tr.classList.remove("activo", "activo-seleccionado");
+  });
+
+  // Marcar las filas del track activo
+  document.querySelectorAll(`tr[data-track-id="${trackActivo}"]`).forEach(tr => {
+    tr.classList.add("activo");
+  });
+
+  // Marcar la fila seleccionada
+  fila.classList.add("activo-seleccionado");
+
+  // Marcar el punto correspondiente
   const segundos = fila.dataset.segundos;
   if (!segundos) return;
 
   const linea = document.getElementById("linea-tiempo");
   linea.querySelectorAll(".marca").forEach(marca => {
-    marca.style.backgroundColor = "white"; // reiniciar color
+    marca.style.backgroundColor = "white";
     marca.style.transform = "scale(1)";
   });
 
