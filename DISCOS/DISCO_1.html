@@ -659,15 +659,15 @@ function reproducirTema(trackID) {
   cargarMilimetrada(trackID);
 
   // Marcar como activas solo las filas con el track seleccionado
-  document.querySelectorAll("tr").forEach(tr => {
-    if (tr.dataset.trackId === trackID) {
-      tr.classList.remove("inactivo");
-      tr.classList.add("activo");
-    } else {
-      tr.classList.remove("activo", "activo-seleccionado");
-      tr.classList.add("inactivo");
-    }
-  });
+  document.querySelectorAll("tr[data-track-id]").forEach(tr => {
+  if (tr.dataset.trackId === trackID) {
+    tr.classList.remove("inactivo");
+    tr.classList.add("activo");
+  } else {
+    tr.classList.remove("activo", "activo-seleccionado");
+    tr.classList.add("inactivo");
+  }
+});
 
  // CAMBIAR LA NEGRITA DEL ORICHA ACTIVO (solo una vez por track)
 document.querySelectorAll(".oricha").forEach(td => {
