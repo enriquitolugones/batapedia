@@ -669,13 +669,15 @@ function reproducirTema(trackID) {
   }
 });
 
- // CAMBIAR LA NEGRITA DEL ORICHA ACTIVO (solo una vez por track)
-document.querySelectorAll(".oricha").forEach(td => {
-  td.classList.remove("activa");
-});
-const filaActiva = document.querySelector(`tr[data-track-id="${trackID}"] .oricha`);
-if (filaActiva) {
-  filaActiva.classList.add("activa");
+// CAMBIAR LA NEGRITA DEL ORICHA ACTIVO (una sola a la vez)
+document.querySelectorAll(".oricha").forEach(td => td.classList.remove("activa"));
+
+// Buscar la PRIMERA fila con ese trackID y que tenga un .oricha
+const filaOricha = document.querySelector(`tr[data-track-id="${trackID}"] .oricha`) ||
+                   document.querySelector(`.oricha[onclick*="${trackID}"]`);
+
+if (filaOricha) {
+  filaOricha.classList.add("activa");
 }
 
   // Insertar el nuevo track con un pequeño delay
