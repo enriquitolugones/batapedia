@@ -143,6 +143,11 @@ tr[data-track-id].activo:hover {
 tr.activo-seleccionado {
   background-color: #222 !important;
 }
+    .inactivo:hover {
+  background-color: inherit !important;
+  cursor: default !important;
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
@@ -623,6 +628,12 @@ botonMawo.addEventListener("click", function () {
   // Cierra ambos reproductores
   document.getElementById("spotify-container").innerHTML = "";
   document.getElementById("spotify-player").innerHTML = "";
+
+  // ✅ PUNTO 3: Desactiva la limitación de fila
+  trackActivo = null;
+  document.querySelectorAll("tr").forEach(tr => {
+    tr.classList.remove("desactivado");
+  });
 });
 </script>
 
@@ -630,14 +641,8 @@ botonMawo.addEventListener("click", function () {
   let trackActivo = null; // ← DECLARACIÓN GLOBAL ARRIBA
 
   function reproducirTema(trackID) {
-    trackActivo = trackID; // ← GUARDA EL TRACK ACTIVO
-// Resalta todas las filas de ese track (zona activa)
-document.querySelectorAll("tr").forEach(tr => {
-  tr.style.backgroundColor = ""; // limpia todo primero
-  if (tr.dataset.trackId === trackID) {
-    tr.style.backgroundColor = "#111"; // resalta solo este track
-  }
-});
+    trackActivo = trackID; // ← GUARDAR TRACK ACTIVO
+
     // Cierra el reproductor del álbum
     document.getElementById("spotify-container").innerHTML = "";
 
@@ -649,7 +654,16 @@ document.querySelectorAll("tr").forEach(tr => {
     // 💡 Cargar marcas visuales (milimetrada)
     cargarMilimetrada(trackID);
 
-    // Inserta el nuevo track con un pequeño delay
+    // Marcar como activas solo las filas con el track seleccionado
+    document.querySelectorAll("tr").forEach(tr => {
+      if (tr.dataset.trackId === trackID) {
+        tr.classList.remove("inactivo");
+      } else {
+        tr.classList.add("inactivo");
+      }
+    });
+
+    // Insertar el nuevo track con un pequeño delay
     setTimeout(() => {
       document.getElementById("spotify-player").innerHTML = `
         <iframe style="border-radius:12px"
