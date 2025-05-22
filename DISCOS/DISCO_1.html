@@ -146,6 +146,13 @@ tr.activo-seleccionado {
  .inactivo {
   opacity: 0.4;
 }
+    .oricha {
+  font-weight: normal; /* todos comienzan normales */
+}
+
+.oricha.activa {
+  font-weight: bold; /* solo la activa se pone en negrita */
+}
   </style>
 </head>
 <body>
@@ -637,44 +644,52 @@ botonMawo.addEventListener("click", function () {
 
 <script>
   let trackActivo = null; // ← DECLARACIÓN GLOBAL ARRIBA
+function reproducirTema(trackID) {
+  trackActivo = trackID;
 
-  function reproducirTema(trackID) {
-    trackActivo = trackID; // ← GUARDAR TRACK ACTIVO
+  // Cierra el reproductor del álbum
+  document.getElementById("spotify-container").innerHTML = "";
 
-    // Cierra el reproductor del álbum
-    document.getElementById("spotify-container").innerHTML = "";
+  // Limpia reproductor anterior, leyendas y activa la línea de tiempo
+  document.getElementById("spotify-player").innerHTML = "";
+  document.getElementById("leyenda-partes").innerHTML = "";
+  document.getElementById("linea-tiempo").style.display = "block";
 
-    // Limpia reproductor anterior, leyendas y activa la línea de tiempo
-    document.getElementById("spotify-player").innerHTML = "";
-    document.getElementById("leyenda-partes").innerHTML = "";
-    document.getElementById("linea-tiempo").style.display = "block";
+  // Cargar marcas visuales (milimetrada)
+  cargarMilimetrada(trackID);
 
-    // 💡 Cargar marcas visuales (milimetrada)
-    cargarMilimetrada(trackID);
+  // Marcar como activas solo las filas con el track seleccionado
+  document.querySelectorAll("tr").forEach(tr => {
+    if (tr.dataset.trackId === trackID) {
+      tr.classList.remove("inactivo");
+      tr.classList.add("activo");
+    } else {
+      tr.classList.remove("activo", "activo-seleccionado");
+      tr.classList.add("inactivo");
+    }
+  });
 
-    // Marcar como activas solo las filas con el track seleccionado
-    document.querySelectorAll("tr").forEach(tr => {
-  if (tr.dataset.trackId === trackID) {
-    tr.classList.remove("inactivo");
-    tr.classList.add("activo"); // ✅ Añade clase visual activa
-  } else {
-    tr.classList.remove("activo", "activo-seleccionado");
-    tr.classList.add("inactivo");
-  }
-});
+  // CAMBIAR LA NEGRITA DEL ORICHA ACTIVO
+  document.querySelectorAll(".oricha").forEach(td => {
+    td.style.fontWeight = "normal";
+  });
+  document.querySelectorAll(`tr[data-track-id="${trackID}"] .oricha`).forEach(td => {
+    td.style.fontWeight = "bold";
+  });
 
-    // Insertar el nuevo track con un pequeño delay
-    setTimeout(() => {
-      document.getElementById("spotify-player").innerHTML = `
-        <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/${trackID}?autoplay=1"
-                width="100%" height="80" frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-        </iframe>
-      `;
-    }, 200);
-  }
+  // Insertar el nuevo track con un pequeño delay
+  setTimeout(() => {
+    document.getElementById("spotify-player").innerHTML = `
+      <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/${trackID}?autoplay=1"
+              width="100%" height="80" frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+      </iframe>
+    `;
+  }, 200);
+}
+  
 </script>
   
   <!-- LISTA GLOBAL POR MARCAS -->
