@@ -834,15 +834,15 @@ function activarMarca(fila) {
     tr.classList.remove("activo", "activo-seleccionado");
   });
 
-  // Marcar las filas del track activo
-  document.querySelectorAll(`tr[data-track-id="${trackActivo}"]`).forEach(tr => {
+  // ✅ Marcar todas las filas del mismo track que la fila clicada
+  document.querySelectorAll(`tr[data-track-id="${trackID}"]`).forEach(tr => {
     tr.classList.add("activo");
   });
 
   // Marcar la fila seleccionada
   fila.classList.add("activo-seleccionado");
 
-  // Marcar el punto correspondiente
+  // Marcar el punto correspondiente en la línea de tiempo
   const segundos = fila.dataset.segundos;
   if (!segundos) return;
 
