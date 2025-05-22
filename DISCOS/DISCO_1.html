@@ -177,7 +177,7 @@ td:nth-child(3) {
 <table>
   
 <!-- ORICHA 1 -->
-<tr data-segundos="0" onclick="activarMarca(this)">
+<tr data-track-id="2tNc8CbX63N3TaV0rZasrL" data-segundos="0" onclick="activarMarca(this)">
   <td class="oricha" onclick="reproducirTema('2tNc8CbX63N3TaV0rZasrL')" style="cursor:pointer;">
     1 - ELEGGUÁ
   </td>
@@ -186,7 +186,7 @@ td:nth-child(3) {
   <td>barasuayo</td>
 </tr>
 
-<tr data-segundos="105" onclick="activarMarca(this)">
+<tr data-track-id="2tNc8CbX63N3TaV0rZasrL" data-segundos="105" onclick="activarMarca(this)">
   <td></td>
   <td>1:45--2:28</td>
   <td class="toque">CHACHÁLOKPAFÚÑ</td>
@@ -330,7 +330,7 @@ td:nth-child(3) {
   <td>8:37--</td>
   <td class="toque">TANI IBOYA</td>
   <td></td>
-</tr>
+</tr>  
 
 <!-- ORICHA 4 -->
 <tr data-segundos="0" onclick="activarMarca(this)">
@@ -362,8 +362,8 @@ td:nth-child(3) {
   <td class="toque">META-META</td>
   <td>oba ibo</td>
 </tr>
-  
-<!-- ORICHA 5 -->
+
+ <!-- ORICHA 5 -->
 <tr data-segundos="0" onclick="activarMarca(this)">
   <td class="oricha" onclick="reproducirTema('7wnQVAPoB8ebVk9rdBeud7')" style="cursor:pointer;">
     5 - OYÁ
@@ -406,8 +406,7 @@ td:nth-child(3) {
   <td>4:24--5:07</td>
   <td class="toque">(NO TOQUE)</td>
   <td>olele</td>
-</tr>
-
+</tr> 
 <!-- ORICHA 6 -->
 <tr data-segundos="0" onclick="activarMarca(this)">
   <td class="oricha" onclick="reproducirTema('2Njyy1wUD4LTWigBx0WcrO')" style="cursor:pointer;">
@@ -445,7 +444,7 @@ td:nth-child(3) {
   <td class="toque">ORULA</td>
   <td>yo ko bi o bo obi</td>
 </tr>
-  
+
 <!-- ORICHA 7 -->
 <tr data-segundos="0" onclick="activarMarca(this)">
   <td class="oricha" onclick="reproducirTema('68uAkQlRuP95s9gJ90tqO4')" style="cursor:pointer;">
@@ -549,8 +548,8 @@ td:nth-child(3) {
   <td class="toque">OLOKUN (LA SALIDA)</td>
   <td>ambe ala fele tó</td>
 </tr>
-
- <!-- ORICHA 9 -->
+  
+<!-- ORICHA 9 -->
 <tr data-segundos="0" onclick="activarMarca(this)">
   <td class="oricha" onclick="reproducirTema('5DSSGggEJgKtVNc9jTVzZ9')" style="cursor:pointer;">
     9 - ELEGGUÁ
@@ -566,6 +565,8 @@ td:nth-child(3) {
   <td class="toque">CHACHÁLOKPAFÚÑ</td>
   <td>so sa so</td>
 </tr>
+
+ 
 
 </table>
   </div>    
@@ -614,7 +615,11 @@ botonMawo.addEventListener("click", function () {
 </script>
 
 <script>
+  let trackActivo = null; // ← DECLARACIÓN GLOBAL ARRIBA
+
   function reproducirTema(trackID) {
+    trackActivo = trackID; // ← GUARDA EL TRACK ACTIVO
+
     // Cierra el reproductor del álbum
     document.getElementById("spotify-container").innerHTML = "";
 
@@ -639,6 +644,7 @@ botonMawo.addEventListener("click", function () {
     }, 200);
   }
 </script>
+  
   <!-- LISTA GLOBAL POR MARCAS -->
  <script>
 const marcasPorTrack = {
