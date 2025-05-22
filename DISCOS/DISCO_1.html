@@ -627,10 +627,10 @@ botonMawo.addEventListener("click", function () {
   document.getElementById("spotify-container").innerHTML = "";
   document.getElementById("spotify-player").innerHTML = "";
 
-  // ✅ PUNTO 3: Desactiva la limitación de fila
+  // ✅ PUNTO 3: Desactiva la limitación de fila y limpia estilo
   trackActivo = null;
   document.querySelectorAll("tr").forEach(tr => {
-    tr.classList.remove("desactivado");
+    tr.classList.remove("inactivo", "activo", "activo-seleccionado");
   });
 });
 </script>
@@ -654,12 +654,14 @@ botonMawo.addEventListener("click", function () {
 
     // Marcar como activas solo las filas con el track seleccionado
     document.querySelectorAll("tr").forEach(tr => {
-      if (tr.dataset.trackId === trackID) {
-        tr.classList.remove("inactivo");
-      } else {
-        tr.classList.add("inactivo");
-      }
-    });
+  if (tr.dataset.trackId === trackID) {
+    tr.classList.remove("inactivo");
+    tr.classList.add("activo"); // ✅ Añade clase visual activa
+  } else {
+    tr.classList.remove("activo", "activo-seleccionado");
+    tr.classList.add("inactivo");
+  }
+});
 
     // Insertar el nuevo track con un pequeño delay
     setTimeout(() => {
