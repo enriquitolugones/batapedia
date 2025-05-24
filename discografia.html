@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>cantos</title>
+  <title>discografia</title>
   <style>
     html, body {
       margin: 0;
@@ -100,6 +100,20 @@
   color: black;
   border-color: limegreen;
   cursor: pointer;
+}
+    /* Estilo especial para los discos que ya están disponibles (como el DISCO_1) */
+.list a[href$="DISCOS/DISCO_1.html"] {
+.list a[href$="DISCOS/DISCO_2.html"] { ... }
+.list a[href$="DISCOS/DISCO_3.html"] { ... }
+  background-color: #003300;  /* Verde oscuro fijo como base */
+  border-color: #003300;
+  font-weight: bold;
+}
+
+.list a[href$="DISCOS/DISCO_1.html"]:hover {
+  background-color: limegreen; /* Igual que el hover normal, pero más visible */
+  color: black;
+  border-color: limegreen;
 }
     
       .boton-toque {
