@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>transcant_1</title>
+  <style>
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      height: 100%;
+    }
+    header {
+      background: url('../FOTOS/banner_difuminado_suave.jpg') center/cover no-repeat;
+      height: 150px;
+      width: 100%;
+    }
+    .contenido {
+      display: flex;
+      height: calc(100% - 150px);
+      align-items: stretch;
+    }
+    nav {
+      width: 200px;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .boton {
+      display: block;
+      width: 100%;
+      margin-bottom: 1.4rem;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      text-decoration: none;
+      font-size: 0.82rem;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+    .rojo { background-color: red; }
+    .verde { background-color: limegreen; }
+    main {
+      flex: 1;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+   .cuadro-central {
+  border: 1px solid white;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  overflow-y: auto;
+
+}
+    
+
+.boton-toque:hover {
+  background-color: limegreen;
+  color: black;
+  cursor: pointer;
+}
+
+}
+  
+    tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* aclarado suave al pasar el ratón */
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+<header></header>
+<div class="contenido">
+  <nav style="margin-top: 2.5rem;">
+      <a href="../index.html" class="boton rojo">INICIO</a>                              <!-- BOTON DE INICIO -->
+      <a href="../orichas.html" class="boton verde">ORICHAS</a>                          <!-- BOTON DE ORICHAS -->            
+      <a href="../cantos" class="boton rojo">CANTOS</a>                                  <!-- BOTON DE CANTOS -->
+      <a href="../toques_de_bata" class="boton verde">TOQUES DE BATÁ</a>                 <!-- BOTON DE TOQUES DE BATA -->
+      <a href="../transcripciones.html" class="boton rojo">TRANSCRIPCIONES</a>           <!-- BOTON DE TRANSCRIPCIONES -->
+      <a href="../discografia.html" class="boton verde">DISCOGRAFÍA</a>                  <!-- BOTON DE DISCOGRAFIA -->
+    </nav>
+  
+  <main>
+ 
+<!-- DENTRO del cuadro central solo va esto -->
+<div class="cuadro-central">
+
+
+  <!-- MARCO VERDE INTERNO -->
+<div class="cuadro-verde" style="
+  border: 2px solid limegreen;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 280px;
+  background-color: #111;
+  color: white;
+  display: flex;
+  gap: 1rem;
+  width: calc(100% - 4rem);
+  margin-left: auto;
+  margin-right: auto;
+">
+
+  <!-- COLUMNA DE TEXTO -->
+  <div style="flex: 1;">
+    <h2 style="margin-top: 0; color: limegreen;">Aluyá Oni Changó</h2>
+    <p><strong>Canto:</strong> Aluyá oni Changó, aluyá oni Changó…</p>
+    <p><strong>Traducción:</strong> El que baila por Changó, el que baila por Changó…</p>
+    <p><strong>Observaciones:</strong> Se canta en momentos de invocación intensa a Changó, suele acompañarse con pasos rápidos.</p>
+  </div>
+
+  <!-- FOTO A LA DERECHA DENTRO DEL MARCO VERDE -->
+  <img src="../FOTOS/REGION.png" alt="Africa" 
+    style="
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid white;
+    border-radius: 4px;
+    flex-shrink: 0;
+  ">
+</div> <!-- FIN DEL MARCO VERDE -->
+
+
+
+  </div>    <!-- FIN DE CUADRO CENTRAL -->
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
