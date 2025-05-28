@@ -151,15 +151,51 @@ td:nth-child(3) {
 <div class="cuadro-central">
 <div class="info-album" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0; margin-bottom: 0.5rem;">
 
-  <!-- Carátula con borde blanco -->
-  <img id="caratula" src="../FOTOS/CARATULA_DISCO_1.png" alt="Carátula del álbum"
-       style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white; border-radius: 6px; cursor: pointer;">
+  <!-- MARCO VERDE INTERNO -->
+<div class="cuadro-verde" style="
+  border: 2px solid limegreen;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 280px;
+  background-color: #111;
+  color: white;
+  display: flex;
+  gap: 1rem;
+">
 
-  <!-- Título centrado -->
-  <h1 style="color: #FF3333; font-size: 1.3rem; margin: 0; flex: 1; text-align: center;">
-    Música Yoruba – Conjunto Folklórico Nacional de Cuba
-  </h1>
+  <!-- COLUMNA DE TEXTO -->
+  <div style="flex: 1;">
+    <h2 style="margin-top: 0; color: limegreen;">Aluyá Oni Changó</h2>
+    <p><strong>Canto:</strong> Aluyá oni Changó, aluyá oni Changó…</p>
+    <p><strong>Traducción:</strong> El que baila por Changó, el que baila por Changó…</p>
+    <p><strong>Observaciones:</strong> Se canta en momentos de invocación intensa a Changó, suele acompañarse con pasos rápidos.</p>
+  </div>
 
+  <!-- FOTO A LA DERECHA DENTRO DEL MARCO VERDE -->
+  <img src="../FOTOS/imagen_canto_1.jpg" alt="Imagen relacionada" style="
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid white;
+    border-radius: 4px;
+    flex-shrink: 0;
+  ">
+
+</div>
+
+<!-- BANNER INFERIOR POR FUERA DEL MARCO VERDE -->
+<img src="../FOTOS/banner_inferior.jpg" alt="Banner inferior" style="
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 1rem;
+  border: 1px solid white;
+  border-radius: 6px;
+">
+
+ 
 
   </div>    
       </div>
