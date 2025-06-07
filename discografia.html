@@ -102,13 +102,15 @@
   cursor: pointer;
 }
     /* Estilo especial para los discos que ya están disponibles (como el DISCO_1) */
-.list a[href$="DISCOS/DISCO_1.html"] {
-  background-color: #003300;  /* Verde oscuro fijo como base */
-  border-color: #003300;
+.list a[href$="DISCOS/DISCO_1.html"],
+.list a[href$="DISCOS/DISCO_2.html"] {
+  background-color: #006666;  /* Verde azulado fijo como base */
+  border-color: #006666;
   font-weight: bold;
 }
 
-.list a[href$="DISCOS/DISCO_1.html"]:hover {
+.list a[href$="DISCOS/DISCO_1.html"]:hover,
+ .list a[href$="DISCOS/DISCO_2.html"]:hover {
   background-color: limegreen; /* Igual que el hover normal, pero más visible */
   color: black;
   border-color: limegreen;
