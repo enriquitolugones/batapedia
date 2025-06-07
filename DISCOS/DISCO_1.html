@@ -87,36 +87,43 @@
   }
 
   /* Tabla: define estructura fija para columnas */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* IMPORTANTE para columnas fijas */
-  }
-  /* Definición anchos fijos para cada columna */
-  table tr td:nth-child(1) {
-    width: 25%;           /* Columna ORICHA */
-    white-space: nowrap;  /* evita salto de línea */
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  table tr td:nth-child(2) {
-    width: 20%;           /* Columna TIEMPO */
-    padding-right: 1rem;
-    white-space: nowrap;
-  }
-  table tr td:nth-child(3) {
-    width: 30%;           /* Columna TOQUE */
-    padding-right: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  table tr td:nth-child(4) {
-    width: 25%;           /* Columna CANTO */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+ table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Para controlar mejor el ancho de columnas */
+}
+
+table tr td:nth-child(1) {
+  width: 25%; /* Columna ORICHA */
+  padding-left: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table tr td:nth-child(2) {
+  width: 20%; /* Columna TIEMPO */
+  padding-right: 1rem;
+  white-space: nowrap;
+  position: relative;
+  left: -1cm; /* Desplaza 1 cm a la izquierda */
+}
+
+table tr td:nth-child(3) {
+  width: 25%; /* Columna TOQUE */
+  padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+table tr td:nth-child(4) {
+  width: 30%; /* Columna CANTO */
+  padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
   /* POSICIONAMIENTO del reproductor individual */
   #spotify-player {
