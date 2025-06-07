@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>disco_1</title>
- <style>
+<style>
   html, body {
     margin: 0;
     padding: 0;
@@ -79,21 +79,18 @@
     box-sizing: border-box;
     transition: background-color 0.3s;
   }
-
   .boton-toque:hover {
     background-color: limegreen;
     color: black;
     cursor: pointer;
   }
-
-  /* Tabla: estructura fija y columnas bien separadas con bordes */
+  
   table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     table-layout: fixed;
   }
-
+  
   table tr td:nth-child(1) {
     width: 25%;
     padding-left: 1rem;
@@ -102,16 +99,15 @@
     text-overflow: ellipsis;
     border-right: 1px solid white;
   }
-
+  
   table tr td:nth-child(2) {
     width: 20%;
     padding-left: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    border-right: 1px solid white;
   }
-
+  
   table tr td:nth-child(3) {
     width: 25%;
     padding-left: 1rem;
@@ -120,7 +116,7 @@
     text-overflow: ellipsis;
     border-right: 1px solid white;
   }
-
+  
   table tr td:nth-child(4) {
     width: 30%;
     padding-left: 1rem;
@@ -128,8 +124,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
-  /* POSICIONAMIENTO del reproductor individual */
+  
   #spotify-player {
     position: absolute;
     top: 19px;
@@ -139,6 +134,7 @@
     z-index: 10;
     padding: 0;
   }
+  
   #linea-tiempo {
     display: none;
     position: absolute;
@@ -155,6 +151,7 @@
       transparent 10px
     );
   }
+  
   #boton-mawo {
     position: absolute;
     top: 16px;
@@ -164,6 +161,7 @@
     cursor: pointer;
     z-index: 11;
   }
+  
   tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
