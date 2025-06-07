@@ -5,168 +5,156 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>disco_1</title>
-  <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
-    font-family: sans-serif;
-    height: 100%;
+ const styles = {
+  htmlBody: {
+    margin: 0,
+    padding: 0,
+    backgroundColor: "black",
+    color: "white",
+    fontFamily: "sans-serif",
+    height: "100%"
+  },
+  header: {
+    background: "url('../FOTOS/banner_difuminado_suave.jpg') center/cover no-repeat",
+    height: "150px",
+    width: "100%"
+  },
+  contenido: {
+    display: "flex",
+    height: "calc(100% - 150px)",
+    alignItems: "stretch"
+  },
+  nav: {
+    width: "200px",
+    padding: "1rem",
+    boxSizing: "border-box"
+  },
+  boton: {
+    display: "block",
+    width: "100%",
+    marginBottom: "1.4rem",
+    padding: "1rem",
+    textAlign: "center",
+    color: "white",
+    fontWeight: "bold",
+    border: "2px solid white",
+    textDecoration: "none",
+    fontSize: "0.82rem",
+    wordWrap: "break-word",
+    boxSizing: "border-box"
+  },
+  rojo: {
+    backgroundColor: "red"
+  },
+  verde: {
+    backgroundColor: "limegreen"
+  },
+  main: {
+    flex: 1,
+    padding: "0.5rem 2rem 0.5rem 2rem",
+    display: "flex",
+    flexDirection: "column"
+  },
+  cuadroCentral: {
+    border: "1px solid white",
+    padding: "1rem",
+    marginTop: "2.5rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "410px",
+    position: "relative",
+    overflowY: "auto"
+  },
+  botonToque: {
+    backgroundColor: "#111",
+    color: "white",
+    border: "2px solid white",
+    borderRadius: "6px",
+    padding: "1rem",
+    marginBottom: "1rem",
+    textAlign: "center",
+    textDecoration: "none",
+    display: "block",
+    fontSize: "0.9rem",
+    fontWeight: "bold",
+    width: "100%",
+    boxSizing: "border-box",
+    transition: "background-color 0.3s"
+  },
+  botonToqueHover: {
+    backgroundColor: "limegreen",
+    color: "black",
+    cursor: "pointer"
+  },
+  table: {
+    width: "100%",
+    borderCollapse: "collapse",
+    tableLayout: "fixed"
+  },
+  tdOricha: {
+    width: "25%",
+    paddingLeft: "0.5rem",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+  },
+  tdTiempo: {
+    width: "20%",
+    paddingRight: "1rem",
+    whiteSpace: "nowrap",
+    position: "relative",
+    left: "-1cm"
+  },
+  tdToque: {
+    width: "25%",
+    paddingLeft: "1rem",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    position: "relative",
+    left: "-2cm"
+  },
+  tdCanto: {
+    width: "30%",
+    paddingLeft: "1rem",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+  },
+  spotifyPlayer: {
+    position: "absolute",
+    top: "19px",
+    left: "129px",
+    right: "8.5rem",
+    height: "24px",
+    zIndex: 10,
+    padding: 0
+  },
+  lineaTiempo: {
+    display: "none",
+    position: "absolute",
+    top: "109px",
+    left: "220px",
+    right: "21rem",
+    height: "8px",
+    zIndex: 5,
+    background: "repeating-linear-gradient(to right, white 0px, white 1px, transparent 1px, transparent 10px)"
+  },
+  botonMawo: {
+    position: "absolute",
+    top: "16px",
+    right: "0.5rem",
+    fontSize: "1.1rem",
+    fontWeight: "bold",
+    cursor: "pointer",
+    zIndex: 11
+  },
+  trHover: {
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    cursor: "pointer"
   }
-  header {
-    background: url('../FOTOS/banner_difuminado_suave.jpg') center/cover no-repeat;
-    height: 150px;
-    width: 100%;
-  }
-  .contenido {
-    display: flex;
-    height: calc(100% - 150px);
-    align-items: stretch;
-  }
-  nav {
-    width: 200px;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-  .boton {
-    display: block;
-    width: 100%;
-    margin-bottom: 1.4rem;
-    padding: 1rem;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    border: 2px solid white;
-    text-decoration: none;
-    font-size: 0.82rem;
-    word-wrap: break-word;
-    box-sizing: border-box;
-  }
-  .rojo { background-color: red; }
-  .verde { background-color: limegreen; }
-  main {
-    flex: 1;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .cuadro-central {
-    border: 1px solid white;
-    padding: 1rem;
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 410px;
-    position: relative;
-    overflow-y: auto;
-  }
-  
-  .boton-toque {
-    background-color: #111;
-    color: white;
-    border: 2px solid white;
-    border-radius: 6px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 0.9rem;
-    font-weight: bold;
-    width: 100%;
-    box-sizing: border-box;
-    transition: background-color 0.3s;
-  }
-
-  .boton-toque:hover {
-    background-color: limegreen;
-    color: black;
-    cursor: pointer;
-  }
-
-  /* Tabla: define estructura fija para columnas */
- table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* Para controlar mejor el ancho de columnas */
-}
-
-table tr td:nth-child(1) {
-  width: 25%; /* Columna ORICHA */
-  padding-left: 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-table tr td:nth-child(2) {
-  width: 20%; /* Columna TIEMPO */
-  padding-right: 1rem;
-  white-space: nowrap;
-  position: relative;
-  left: -1cm; /* Desplaza 1 cm a la izquierda */
-}
-
-table tr td:nth-child(3) {
-  width: 25%; /* Columna TOQUE */
-  padding-left: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
-  left: -2cm; /* Mueve 2 cm a la izquierda */
-}
-
-table tr td:nth-child(4) {
-  width: 30%; /* Columna CANTO */
-  padding-left: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-  /* POSICIONAMIENTO del reproductor individual */
-  #spotify-player {
-    position: absolute;
-    top: 19px;       /* debajo del título */
-    left: 129px;      /* alineado con la carátula */
-    right: 8.5rem;      /* deja margen a la derecha */
-    height: 24px;     /* lo más delgado posible */
-    z-index: 10;      /* por encima del cuadro verde */
-    padding: 0;
-  }
-  #linea-tiempo {
-    display: none;
-    position: absolute;
-    top: 109px;
-    left: 220px;
-    right: 21rem;
-    height: 8px;
-    z-index: 5;
-    background: repeating-linear-gradient(
-      to right,
-      white 0px,
-      white 1px,
-      transparent 1px,
-      transparent 10px
-    );
-  }
-  #boton-mawo {
-    position: absolute;
-    top: 16px;
-    right: 0.5rem;  /* o 1rem si quieres un poco de espacio */
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 11;
-  }
-  tr:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* aclarado suave al pasar el ratón */
-    cursor: pointer;
-  }
-</style>
+};
 </head>
 <body>
 <header></header>
