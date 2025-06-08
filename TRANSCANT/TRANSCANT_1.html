@@ -76,16 +76,6 @@
   background-color: rgba(255, 255, 255, 0.1); /* aclarado suave al pasar el ratón */
   cursor: pointer;
 }
-    .dos-columnas {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.columna {
-  flex: 1;
-  min-width: 300px;
-}
     .tabla-cantos {
   width: 100%;
   border-collapse: separate;
@@ -103,8 +93,10 @@
 }
 
 .tabla-cantos .traduccion {
-  padding-left: 4cm;
+  width: 60%;           /* Añadir esto para que funcione como quieres */
+  padding-left: 2rem;   /* En lugar de 4cm, que es excesivo */
 }
+    
   </style>
 </head>
 <body>
