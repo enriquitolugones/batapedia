@@ -101,24 +101,30 @@
   cursor: help;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
 .tooltip-text {
   visibility: hidden;
-  max-width: 400px;
-  white-space: normal;
-  background-color: black;
-  color: white;
+  max-width: 320px;
+  background: rgba(0, 0, 0, 0.95); /* fondo opaco oscuro */
+  color: #f0f0f0;                  /* gris claro, más legible */
   text-align: left;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
   position: absolute;
-  z-index: 1000;
-  top: 110%;                /* debajo del texto */
+  z-index: 9999;
+  top: 120%;         /* más espacio debajo */
   left: 0;
   opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
   line-height: 1.4;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);     /* efecto suavizado opcional */
 }
 
 .tooltip:hover .tooltip-text {
