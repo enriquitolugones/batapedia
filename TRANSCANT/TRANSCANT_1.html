@@ -103,19 +103,22 @@
 
 .tooltip-text {
   visibility: hidden;
-  width: 250px;
+  max-width: 400px;            /* permite una línea más larga */
+  white-space: normal;         /* permite que el texto haga salto de línea natural */
   background-color: black;
   color: white;
   text-align: left;
   padding: 0.5rem;
   border-radius: 6px;
   position: absolute;
-  z-index: 1;
-  bottom: 125%; /* se muestra arriba */
+  z-index: 1000;               /* más alto para que esté por encima de todo */
+  bottom: 125%;
   left: 0;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 1rem;
+  font-size: 1.1rem;           /* ligeramente más grande */
+  line-height: 1.4;
+  box-shadow: 0 0 10px #000;   /* opcional: sombra para mejor visibilidad */
 }
 
 .tooltip:hover .tooltip-text {
