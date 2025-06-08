@@ -103,22 +103,23 @@
 
 .tooltip-text {
   visibility: hidden;
-  max-width: 400px;            /* permite una línea más larga */
-  white-space: normal;         /* permite que el texto haga salto de línea natural */
+  max-width: 400px;
+  white-space: normal;
   background-color: black;
   color: white;
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   position: absolute;
-  z-index: 1000;               /* más alto para que esté por encima de todo */
-  bottom: 125%;
+  z-index: 1000;
+  top: 110%;                /* debajo del texto */
   left: 0;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 1.1rem;           /* ligeramente más grande */
+  font-size: 1.1rem;
   line-height: 1.4;
-  box-shadow: 0 0 10px #000;   /* opcional: sombra para mejor visibilidad */
+  box-shadow: 0 0 10px #000;
+}
 }
 
 .tooltip:hover .tooltip-text {
