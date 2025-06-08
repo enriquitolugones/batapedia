@@ -95,11 +95,7 @@
   width: 60%;           /* Añadir esto para que funcione como quieres */
   padding-left: 2rem;   /* En lugar de 4cm, que es excesivo */
 }
-    .tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: help;
-}
+   
 
 .tooltip {
   position: relative;
@@ -109,15 +105,15 @@
 
 .tooltip-text {
   visibility: hidden;
-  max-width: 320px;
+  white-space: nowrap;               /* ← esto evita saltos de línea */
   background: rgba(0, 0, 0, 0.95);
   color: #f0f0f0;
   text-align: left;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   position: absolute;
   z-index: 9999;
-  bottom: 120%;              /* AHORA VA PARA ARRIBA */
+  top: 120%;                         /* ← aparece debajo del texto */
   left: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -125,8 +121,8 @@
   line-height: 1.4;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   backdrop-filter: blur(4px);
-  margin-bottom: 0.5rem;     /* separación con la palabra */
 }
+
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
