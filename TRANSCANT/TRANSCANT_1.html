@@ -110,23 +110,23 @@
 .tooltip-text {
   visibility: hidden;
   max-width: 320px;
-  background: rgba(0, 0, 0, 0.95); /* fondo opaco oscuro */
-  color: #f0f0f0;                  /* gris claro, más legible */
+  background: rgba(0, 0, 0, 0.95);
+  color: #f0f0f0;
   text-align: left;
   padding: 0.8rem 1rem;
   border-radius: 8px;
   position: absolute;
   z-index: 9999;
-  top: 120%;         /* más espacio debajo */
+  bottom: 120%;              /* AHORA VA PARA ARRIBA */
   left: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
   font-size: 1rem;
   line-height: 1.4;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  backdrop-filter: blur(4px);     /* efecto suavizado opcional */
+  backdrop-filter: blur(4px);
+  margin-bottom: 0.5rem;     /* separación con la palabra */
 }
-
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
