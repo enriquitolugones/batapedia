@@ -127,6 +127,50 @@
   visibility: visible;
   opacity: 1;
 }
+    .barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+}
+
+.nombre-canto {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: limegreen;
+}
+
+.boton-retorno {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.boton-retorno:hover {
+  text-decoration: underline;
+}
+
+.encabezado-columnas {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.3rem;
+  padding: 0 1rem;
+}
+
+.columna-izquierda {
+  width: 48%;
+  text-align: left;
+}
+
+.columna-derecha {
+  width: 48%;
+  text-align: right;
+}
     
   </style>
 </head>
@@ -147,7 +191,15 @@
 <!-- DENTRO del cuadro central solo va esto -->
 <div class="cuadro-central">
 
- <h2 style="margin-top: 0; color: limegreen;">Aluyá Oni Changó</h2>
+ <div class="barra-superior">
+  <div class="nombre-canto">Aluyá Oni Changó</div>
+  <button class="boton-retorno" onclick="volver()">⮐ Volver</button>
+</div>
+
+<div class="encabezado-columnas">
+  <div class="columna-izquierda">TRANSCRIPCIÓN</div>
+  <div class="columna-derecha">TRADUCCIÓN</div>
+</div>
  
   <!-- MARCO VERDE INTERNO -->
 <div class="cuadro-verde" style="
