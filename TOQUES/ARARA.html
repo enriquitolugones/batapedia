@@ -116,9 +116,9 @@
   </audio>
 
   <!-- 6 botones clásicos con imágenes -->
-  <img src="../FOTOS/ENUS_BATAS.jpg" alt="Tambores Batá" title="Tambores Batá"
-       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
-       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA.mp3'; document.getElementById('reproductor').play();">
+ <img src="../FOTOS/ENUS_BATAS.jpg" alt="Tambores Batá" title="Ver video del toque"
+     style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+     onclick="mostrarVideo('../VIDEOS/ARARA.MOV')">
   <img src="../FOTOS/IYA.jpg" alt="Iyá" title="Iyá"
        style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
        onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_IYA.mp3'; document.getElementById('reproductor').play();">
@@ -190,6 +190,17 @@ function mostrarIframe(elemento) {
 function restaurarPartitura() {
   const marco = document.getElementById('marcoPartitura');
   marco.innerHTML = '<img id="partituraImg" src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">';
+}
+</script>
+  <script>
+function mostrarVideo(ruta) {
+  const marco = document.getElementById('marcoPartitura');
+  marco.innerHTML = `
+    <video controls style="width: 100%; height: auto; border: 2px solid limegreen;">
+      <source src="${ruta}" type="video/quicktime">
+      Tu navegador no puede reproducir este video.
+    </video>
+  `;
 }
 </script>
 </body>
