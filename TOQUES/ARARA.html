@@ -122,8 +122,9 @@
      onclick="mostrarVideo('../VIDEOS/ARARA.mp4')">
   
   <img src="../FOTOS/IYA.jpg" alt="Iyá" title="Iyá"
-       style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
-       onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_IYA.mp3'; document.getElementById('reproductor').play();">
+     style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
+     onclick="detenerTodo(); document.getElementById('reproductor').src='../AUDIOS/ARARA_IYA.mp3'; document.getElementById('reproductor').play();">
+  
   <img src="../FOTOS/ITOTELE.jpg" alt="Itótele" title="Itótele"
        style="height: 80px; border: 1px solid white; border-radius: 4px; cursor: pointer;"
        onclick="document.getElementById('reproductor').src='../AUDIOS/ARARA_ITOTELE.mp3'; document.getElementById('reproductor').play();">
@@ -198,6 +199,52 @@ function restaurarPartitura() {
 </script>
   <script>
 function mostrarVideo(ruta) {
+  const marco = document.getElementById('marcoPartitura');
+  marco.innerHTML = `
+    <video controls autoplay style="width: 100%; height: auto; border: 2px solid limegreen;">
+      <source src="${ruta}" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  `;
+}
+</script>
+  <script>
+function detenerTodo() {
+  const audio = document.getElementById('reproductor');
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  const marco = document.getElementById('marcoPartitura');
+  const video = marco.querySelector('video');
+  if (video) {
+    video.pause();
+    video.currentTime = 0;
+  }
+}
+
+function mostrarIframe(elemento) {
+  detenerTodo();
+  const marco = document.getElementById('marcoPartitura');
+  const ruta = elemento.getAttribute('data-src');
+  marco.innerHTML = '';
+  const iframe = document.createElement('iframe');
+  iframe.src = ruta;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.border = 'none';
+  marco.appendChild(iframe);
+}
+
+function restaurarPartitura() {
+  detenerTodo();
+  const marco = document.getElementById('marcoPartitura');
+  marco.innerHTML = '<img id="partituraImg" src="../FOTOS/TOQUE_ARARA.png" alt="Partitura del toque Arará" style="width: 98%; height: auto;">';
+}
+
+function mostrarVideo(ruta) {
+  detenerTodo();
   const marco = document.getElementById('marcoPartitura');
   marco.innerHTML = `
     <video controls autoplay style="width: 100%; height: auto; border: 2px solid limegreen;">
